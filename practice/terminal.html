@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Terminal 101</title>
+	<style>
+	body{
+		background-color: black;
+		color: white;
+	}
+	</style>
+</head>
+<body>
+	<h1>How to Terminal</h1>
+	<h3>What Is? </h3>
+	<ul>
+		<li>Where you type commans to the comp.</li>
+		<li>Don't run a command just because you can</li>
+	</ul>
+	<h3>Command Syntax</h3>
+	<ul>
+		<li>To every command there are 3 parts</li>
+			<ul>
+			<li>Utility (Always First)</li>
+			<li>Flags</li>
+			<li>Arguments</li>
+			</ul>
+	</ul>
+	<h4>Example:</h4>
+	<code>ls -l ~/Desktop</code>
+	<p>This is what your computer will give back to you(Or at least for me):</p>
+	<samp>total 0<br>ls:/Users/1015966/Desktop:Operation not permitted</samp>
+	<ul>
+		<li>ls = Utility</li>
+		<ul>
+			<li>Most commands = 1 utility</li>
+		</ul>
+		<li>-l = Flag</li>
+		<ul>
+			<li>Alters how utility operates</li>
+			<li>Example: Options/Preferences</li>
+			<li>Start with 1 or 2 dash (-)</li>
+		</ul>
+		<li>~/Desktop = Arguments</li>
+		<ul>
+			<li>Used when arg. needs to know exactly what you want</li>
+			<li>The # of arg. depends on utility</li>
+		</ul>
+	</ul>
+	<h3>Moving Around</h3>
+	<code>ls(List Directory)</code>
+	<ul>
+		<li>Tells you what names/files are in your directory</li>
+	</ul>
+	<code>cd(Change Directory)</code>
+	<ul>
+		<li>Lets you change directory</li>
+	</ul>
+	<code>pwd(Print Working Directory)</code>
+	<ul>
+		<li>Lets you see what directory your working in</li>
+	</ul>
+	<h3>Tips & Tricks</h3>
+	<ul>
+		<li>If you do <kbd>cmd +</kbd> your terminal screen with grow bigger</li>
+		<li>You automatically start in your home directory</li>
+		<li><code>cd ~</code> will take you to your home directory</li>
+		<li>According to the Terminal User Guide:
+		<pre>
+When you’re logged in to several servers, unique background colors
+and window titles specified in profiles help you easily spot the right 
+Terminal window. Use profiles built into Terminal, or create your own 
+custom profiles.
+		</pre>
+		</li>
+	</ul>
+</body>
+</html>
