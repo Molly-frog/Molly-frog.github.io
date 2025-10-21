@@ -2,14 +2,13 @@
 
 ## Application
 
-Application is broken into 2 halves
+Application is broken into 2 halves:
 
-| Server | | Client |
-| ------ | | ------ |
-| On desktop comp | | On source comp |
-| --------------- | | -------------- |
-| Waits for network connections | | N/A |
-| ----------------------------- | | --- |
+1. Server 
+	* On desktop comp.
+	* Waits for network connection
+2. Client
+	* Runs on source comp.
 
 Protocols in this layer include: 
  
