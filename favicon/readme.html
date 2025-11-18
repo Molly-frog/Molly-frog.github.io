@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data:; img-src 'self' data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faviconer Icons Package – README</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<style>
+  body{font-size:1em;color:#333;font-family:'Helvetica Neue',Arial,Segoe UI,Roboto,Ubuntu,sans-serif;padding:1.5em;max-width:980px;margin:0 auto;line-height:1.45}
+  main{width: 100%;max-width: 740px;margin: 0 auto}
+  .logo{height: 2em;margin-bottom: 0.75em}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10em,1fr));gap:1em;margin:.75em 0}
+  figure{margin:0;padding:.875em;border:1px solid #eee;border-radius:.5em}
+  figcaption{font-size:.875em;color:#555;margin-top:.375em}
+  pre{white-space:pre-wrap;border:1px solid #eee;padding:.75em;border-radius:.5em;background:#fafafa;color:#5A678E}
+  button{font-size:.875em;padding:.5em .75em;line-height:1.4;border:1px solid #ddd;border-radius:.5em;cursor:pointer;background:#fff}
+  p code{border: 1px solid #eee;padding: .125em .375em;border-radius: .25em;background: #fafafa;color:#005aca}
+  .ok{color:#0a0}
+  .bad{color:#FF0D0D}
+  a{color:#1070e7;}
+  pre i{color: #e00000;font-style:normal;}
+  pre b{color: #0F70E6;font-weight:normal;}
+  #previewWarning{white-space:pre-wrap;border:1px solid #ffdab3;padding:.75em;border-radius:.5em;background:rgba(255,250,245,.75);color:#be8348}
+</style>
+</head>
+<body>
+  <main>
+    <a href="https://faviconer.com" target="_blank">
+      <img class="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNzcgNDIiPjxnIGNsaXAtcGF0aD0idXJsKCNhKSI+PHBhdGggZmlsbD0iIzBmNzBlNiIgZD0iTTMxLjUgMEg0MnY0MkgyMVYzMS41aDEwLjVWMjFIMjFWMTAuNWgxMC41eiIvPjxwYXRoIGZpbGw9IiMyOWMyYTciIGQ9Ik0wIDBoMTAuNXYxMC41SDB6Ii8+PHBhdGggZmlsbD0iI2ZmYmU0ZiIgZD0iTTAgMjFoMTAuNXYxMC41SDB6Ii8+PC9nPjxwYXRoIGZpbGw9IiMzMzMiIGQ9Ik0yNTMuNyAzNVY4LjNoMTEuNXE1IDAgNy41IDIgMi43IDIuMSAyLjcgNi4zIDAgMy40LTEuNyA1LjJhOSA5IDAgMCAxLTQuNyAyLjZsNy43IDEwLjZIMjcwbC03LTEwLjFoLTMuNFYzNXptNS44LTE0LjdoNC43cTIuOCAwIDQtLjl0MS4zLTIuOC0xLjMtMi44cS0xLjItLjgtNC0uOGgtNC43ek0yMjkuMyAzNVY4LjNoMTkuNHY0LjloLTEzLjZ2NS43aDEyLjR2NC43aC0xMi40VjMwaDEzLjZWMzV6TTIwMC4xIDM1VjguM2g2LjJsMTEuNCAxNy45di0xOGg1LjhWMzVoLTYuMmwtMTEuNC0xOHYxOHpNMTgxLjQgMzUuNHEtNC40IDAtNy41LTEuOGExMyAxMyAwIDAgMS00LjktNC44cS0xLjctMy4yLTEuNy03LjJ0MS43LTcgNS01YTE1IDE1IDAgMCAxIDcuNC0xLjdxNC4zIDAgNy41IDEuOHQ1IDQuOXExLjUgMyAxLjYgNyAwIDQtMS43IDcuMi0xLjcgMy01IDQuOGExNSAxNSAwIDAgMS03LjQgMS44bTAtNXEyLjUgMCA0LjMtMS4yYTggOCAwIDAgMCAyLjktM3ExLTIgMS00LjZ0LTEtNC41YTcgNyAwIDAgMC0yLjktM1ExODQgMTMgMTgxLjQgMTNxLTIuNCAwLTQuMyAxYTggOCAwIDAgMC0yLjkgMyAxMCAxMCAwIDAgMC0xIDQuNnEwIDIuNiAxIDQuNmE4IDggMCAwIDAgMi45IDNxMS44IDEuMiA0LjMgMS4xTTE1Ni41IDM1LjRxLTQuMyAwLTcuNS0xLjhhMTMgMTMgMCAwIDEtNS00LjhxLTEuNS0zLjItMS42LTcuMiAwLTQgMS43LTcgMS44LTMuMSA0LjktNWExNSAxNSAwIDAgMSA3LjUtMS43IDE2IDE2IDAgMCAxIDkuNCAyLjlsLTIgNC40YTE3IDE3IDAgMCAwLTMuNy0xLjcgMTIgMTIgMCAwIDAtMy43LS41cS0yLjQgMC00LjMgMWE4IDggMCAwIDAtMyAzIDEwIDEwIDAgMCAwLTEgNC42cTAgMi42IDEgNC42YTggOCAwIDAgMCAzIDNxMS44IDEuMiA0LjMgMS4xYTEyIDEyIDAgMCAwIDMuNy0uNSAxNyAxNyAwIDAgMCAzLjctMS44bDIgNC41cS0yLjIgMS41LTQuNSAyLjJ0LTUgLjdNMTMyIDM1VjguM2g1LjdWMzV6TTExMS41IDM1IDEwMSA4LjNoNi41bDcuMSAyMCA3LTIwaDYuNkwxMTggMzV6TTc3LjMgMzUgODcuNiA4LjNoNi41TDEwNC41IDM1SDk4bC0xLjYtNC43SDg1LjNMODMuNiAzNXptOS42LTkuNWg4bC00LTExLjF6TTU4LjggMzVWOC4zaDE5LjV2NC45SDY0Ljd2NS43SDc3djQuN0g2NC43VjM1eiIvPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGg0MnY0MkgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==" alt="">
+    </a>
+
+    <p>Place all files into the root of your website. The provided HTML snippet and <code>site.webmanifest</code> reference files at the root (e.g., <code>/favicon.png</code>).</p>
+
+    <h2>Preview</h2>
+    <div class="grid">
+      <figure><img src="./favicon.png" alt="favicon" width="48" height="48"><figcaption>favicon.ico&nbsp;&<br/>favicon.png<br/>(48×48)</figcaption></figure>
+      <figure><img src="./favicon.svg" alt="favicon" width="72" height="72"><figcaption>favicon.svg<br/>(scalable)</figcaption></figure>
+      <figure><img src="./apple-touch-icon.png" alt="apple" width="90" height="90"><figcaption>apple-touch-icon.png<br/>(180×180)</figcaption></figure>
+      <figure><img src="./icon-192.png" alt="192" width="96" height="96"><figcaption>icon-192.png (192×192)&nbsp;&<br/>icon-512.png (512×512)</figcaption></figure>
+    </div>
+    <p id="previewWarning">For full functionality, open this page in a web browser. Due to OS limitations, icons may not display outside the browser — on mobile devices, open them directly from the archive.</p>
+    <p>If you’ve set up a dark theme version of your SVG icon, viewing the dark or light variant depends on your device’s theme settings. To see how the icon looks in each mode, switch your device between light and dark themes as desired.</p>
+
+    <h2>Insert into &lt;head&gt;</h2>
+    <pre id="code"><<i>link</i> <i>rel</i>="<b>icon</b>" <i>type</i>="<b>image/x-icon</b>" <i>href</i>="<b>/favicon.ico</b>"><br><<i>link</i> <i>rel</i>="<b>icon</b>" <i>type</i>="<b>image/png</b>" <i>href</i>="<b>/favicon.png</b>"><br><<i>link</i> <i>rel</i>="<b>icon</b>" <i>type</i>="<b>image/svg+xml</b>" <i>href</i>="<b>/favicon.svg</b>"><br><<i>link</i> <i>rel</i>="<b>apple-touch-icon</b>" <i>href</i>="<b>/apple-touch-icon.png</b>"><br><<i>link</i> <i>rel</i>="<b>manifest</b>" <i>href</i>="<b>/site.webmanifest</b>"><br></pre>
+    <p><button id="copy" style="display: none;">Copy</button></p>
+    
+
+    <h2>If you use a different folder for icons</h2>
+    <p>If you decide to use a dedicated folder for icons, move the files there and update the paths in <code>html_code.html</code>, <code>site.webmanifest</code> and in the HTML <code>&lt;head&gt;</code> snippet. Alternatively, set the path prefix in the generator.</p>
+
+    <p><em>Note: If some images are not displayed when viewing this file directly from the ZIP, try extracting the archive first and then open the file again.</em></p>
+    <p>
+      <a href="https://faviconer.com" target="_blank">faviconer.com</a>
+    </p>
+
+    <script>
+      const firstImage = document.querySelector("img");
+      if (firstImage.complete && firstImage.naturalWidth > 0) {
+        removeWarning();
+      } else {
+        firstImage.addEventListener('load', removeWarning);
+      }
+      function removeWarning(){
+        const warningElem = document.querySelector("#previewWarning");
+        warningElem.style.display = "none";
+      }
+      async function copy(event) {
+        const button = event.target;
+        const el = document.querySelector('#code');
+        const text = el.textContent?.replace(/></g, '>\n<');
+        const oldText = button.innerText;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+          }
+          button.innerText = 'Copied ✓';
+          button.classList.add("ok");
+        } catch (e) {
+          button.innerText = 'Copy failed ✕';
+          button.classList.add("bad");
+        } finally {
+          button.disabled = true;
+          setTimeout(()=>{
+            button.innerText = oldText;
+            button.disabled = false;
+            button.classList.remove("ok");
+            button.classList.remove("bad");
+          }, 3500);
+        }
+      }
+      const copyButton = document.querySelector('#copy');
+      copyButton.style.removeProperty("display");
+      copyButton.addEventListener('click', copy);
+    </script>
+  </main>
+</body>
+</html>
