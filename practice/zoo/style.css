@@ -1,0 +1,26 @@
+th, tr, td{
+	border: 1px solid #eeedbe;
+	border-collapse: collapse;
+	background-color: #99b27f;
+	color: #734444;	
+}
+
+body{
+	background-color: #734444;
+	color: #eeedbe;
+}
+a{
+	color: #eeedbe;
+}
+#info{
+	background-color: PapayaWhip;
+}
+
+.highlight{
+	background-color: LightCyan;
+}
+
+#animals{
+	text-decoration: underline;
+	text-decoration: wavy;
+}
