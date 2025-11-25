@@ -8,19 +8,19 @@ th, tr, td{
 body{
 	background-color: #734444;
 	color: #eeedbe;
+	font-family: "Futura", sans-serif;
 }
+
+h1{
+	background-color: #99b27f;
+	display: inline;
+	padding: 10px;
+}
+
 a{
 	color: #eeedbe;
-}
-#info{
-	background-color: PapayaWhip;
+	background-color: #99b27f;
 }
 
-.highlight{
-	background-color: LightCyan;
-}
-
-#animals{
-	text-decoration: underline;
-	text-decoration: wavy;
+li{
 }
