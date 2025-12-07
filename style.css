@@ -1,0 +1,17 @@
+body{
+	background-color: #142d4c;
+	color: #ececec;
+	font-family: "Futura", sans-serif;
+}
+
+h1, h2, h3{
+	background-color: #385170;
+	display: inline;
+	padding: 10px;
+}
+
+p{
+	background-color: #9fd3c7; 
+	color: #385170;
+	margin: 30px;
+}
