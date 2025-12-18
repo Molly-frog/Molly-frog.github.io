@@ -1,0 +1,154 @@
+ <html>
+    <head>
+        <style>
+            body{
+                background: linear-gradient(135deg, #1a2980, #26d0ce);
+                height: 100vh;
+            }
+            h1{
+                text-align: center;
+                font-family: Tahoma, sans-serif;
+                color: white;
+            }
+            .container {
+              display: grid;
+              width: 80vw;
+              height: 80vh;
+              margin: auto;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              background-color: Thistle;
+              padding: 10px;
+              border-radius: 20px;
+              border: 8px solid red;
+            }
+            .heart {
+              height: 20vh; /* adjust to control the size */
+              aspect-ratio: 1;
+              --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+              -webkit-mask-box-image: var(--_m);
+                         mask-border: var(--_m);
+              clip-path: polygon(-41% 0,50% 91%, 141% 0);
+              background-color: chocolate;
+              margin: auto;
+            }
+            /* fallback until better support for mask-border */
+            @supports not (-webkit-mask-box-image: var(--_m)) { 
+              .heart {
+                mask:
+                 radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+                 radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+                 conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+              }
+            }
+            #chocolateheart{
+                grid-column-start: 3;
+                grid-row-start:2;
+            }
+            .lilbits{
+                grid-column-start: 1;
+                grid-row-start: 1;
+                display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+            }
+            #mnm{
+                grid-column-start:1;
+                grid-row-start:1;
+                width:10vh;
+                height:10vh;
+                background-color:red;
+                border-radius:50%;
+                margin: auto;
+                display: grid;
+                place-items: center;
+                font-size: 2em;
+            }
+	    #star{
+		grid-column-start: 2;
+		aspect-ratio: center;
+		height: 25vh;
+		width: 25vh;
+		background-color: #F8CA00;
+		place-items: center;
+		clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn)))
+   );
+   	    }
+	    /* HTML: <div class="one-piece"></div> */
+	    #one-piece {
+  		grid-column-start: 3;
+		grid-column-end: 1;
+		height: 300px;
+  		aspect-ratio: 1;
+  		background: 
+    			radial-gradient(#000 70%,#0000 73%) 50% 57%/7% 7%,
+    			radial-gradient(#000 70%,#0000 73%) 39% 48%/14% 14%,
+    			radial-gradient(#000 70%,#0000 73%) 61% 48%/14% 14%,
+    			linear-gradient(#000 0 0) 50% 39%/69% 2px,
+    			linear-gradient(#000 0 0) 50% 35.8%/59% 2px,
+    			linear-gradient(#000 0 0) 50% 31%/42% 2px,
+    			radial-gradient(50% 100% at 50% 134%,#f0b114 98%,#0000 )50% 15%/44% 19%,
+    			radial-gradient(50% 84% at 50% 100%,#cf091a 98%,#0000 )50% 24%/44% 16%,
+    			radial-gradient(50% 23% at 50% 100%,#F0B114 98%,#0000 )50% 24%/68% 20%,
+   			radial-gradient(#fff 67.5%,#000 68.5% 70%,#0000 71%) 50% 34%/47% 47%;
+  			background-repeat: no-repeat;
+  			position: relative;
+	    }	
+	    #one-piece:before{
+		content: "";
+  		
+		background: 
+    			linear-gradient(#000 0 0) 78% 50%/4% 43%,
+    			linear-gradient(#000 0 0) 22% 50%/4% 43%,
+    			linear-gradient(#000 0 0) 50% 50%/4% 47%,
+    			radial-gradient(75% 57% at 50% 0,#0000 91%,#000 93% 98%,#0000 ),
+    			radial-gradient(85% 76% at 50% 0,#0000 93%,#000 95% 98%,#0000 )#fff;
+  		background-repeat: no-repeat;
+  		inset: 55% 37% 20%;
+		border-radius: 14% 14% 30px 30px/50% 50% 30px 30px;
+  		border: 2px solid #000;
+		z-index: -1;
+	    }
+	    #one-piece:after {
+  		content: "";
+  		inset: 0;
+  		z-index: -2;
+  		padding: 10%;
+  		background: 
+    			radial-gradient(#fff 66%,#0000 71%) 10% 97%/10% 11%,
+    			radial-gradient(#fff 66%,#0000 71%) 3% 90%/10% 11%,
+   	 		radial-gradient(#fff 66%,#0000 71%) 97% 91%/10% 11%,
+    			radial-gradient(#fff 66%,#0000 71%) 89% 98%/10% 11%,
+    			radial-gradient(#fff 66%,#0000 71%) 89% 2%/10% 11%,
+    			radial-gradient(#fff 66%,#0000 71%) 98% 9%/12% 10%,
+    			radial-gradient(#fff 66%,#0000 71%) 2% 10%/11% 10%,
+    			radial-gradient(#fff 66%,#0000 71%) 9% 2%/10% 11%,
+    			linear-gradient(45deg,#0000 47%, #fff 0 53%,#0000 0) content-box,
+    			linear-gradient(-45deg,#0000 47%, #fff 0 53%,#0000 0) content-box,#000;
+  		background-repeat: no-repeat;
+  		filter: blur(4px) contrast(10);
+		}	    
+        </style>
+    </head>
+    <body>
+        <h1>Here, I got you some chocolates &lt;3</h1>
+        <div class="container">
+            <div class="heart" id="chocolateheart"></div>
+	    <div id="star"></div>
+	    <div id="one-piece"></div>
+	    <div class="lilbits">
+                <div id="mnm">
+                m
+                </div>
+                <!-- TODO: Add some more divs here, and style them
+                    to fill in the 'lilbits' part of the chocolate box -->
+            </div>
+            <!-- TODO: Add some more divs here, and style them
+                to fill in the other sections of the chocolate box -->
+        </div>
+    </body>
+</html> 
