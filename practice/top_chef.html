@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coffee Shop</title>
+	<style>
+	body{
+		font-family: "Futura", sans-serif;
+		background-color:   #3E4C55;
+		color:  #edfffa;
+	}
+	.grid {
+		display: grid;
+		height: 100vh;
+		grid:
+		 'head ' 100px
+		 'main ' 1fr
+		 /1fr;
+	}
+	.head{
+		background-color: #974949;
+		font-size: 40px;
+		display: grid;
+		grid:
+			'image name abtus food' 100px
+			/1fr 8fr 6fr 6fr;
+	}
+	#image{
+		grid-area: image;
+
+	}
+	#name{
+		grid-area: name;
+		padding-top: 25px;
+		margin-left: 10px;
+	}
+	#abtus{
+		grid-area: abtus;
+		background-color: #edfffa;
+		color: #974949;
+		margin: 25px;
+		text-align: center;
+		font-size: 25px;
+	}
+	#menu{
+		grid-area: food;
+		background-color: #edfffa;
+		color: #974949;
+		margin: 25px;
+		text-align: center;
+		font-size: 25px;
+	}
+	.hero-image {
+		background-image: url("../images/coffeeshop.png");
+		height: 100vh;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		}
+
+	.hero-text {
+ 		text-align: center;
+		position: absolute;
+		top: 50%;
+ 		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+	button{
+		width: 150px;
+		height: 50px;
+		font-size: 30px;
+		background-color: #974949;
+		color: #edfffa;
+	}
+	</style>
+</head>
+<body>
+	<div class="grid">
+		<div class="head">
+		<div id="name">Coffeee</div>
+		<img src="../images/coffee.png" alt="c" id="image">
+		<!--Got this from CANVA-->
+		<div id="menu"><u>Look At The Menu</u></div>
+		<div id="abtus"><u>Learn About Us</u></div>
+		</div>
+
+		 <div class="hero-image">
+ 			 <div class="hero-text">
+   				 <h1>Making People Happy With Our Coffee...Yeah Trust</h1>
+    				 <p style="font-size: 25px;">Go order some coffee... pls were poor</p>
+				 <button><u>Menu</u></button>
+			 </div>
+		</div>
+	</div>
+</body>
+<html>
