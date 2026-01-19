@@ -29,6 +29,33 @@ body{
 	'infotwo imagetwo' 500px
 	/1fr 1fr;
 }
+.abtusmain{
+	grid-area: main;
+	display: grid;
+	grid:
+	'title title' 150px
+	'infothree  people' 1fr
+	/1fr 1fr;
+	text-align: center;
+	font-size: 25px;
+}
+#title{
+	grid-area: title;
+	margin-left: 400px;
+	margin-top: -15px;
+}
+#people{
+	grid-area: people;
+}
+#info3{
+	grid-area: infothree;
+	background-color: Cornsilk;
+	padding: 30px;
+}
+#people{
+	grid-area: people;
+	background-color: Cornsilk;
+}
 .hero-image{
 	grid-area: hero;
 	background-image: url("images/red-trans.png");
