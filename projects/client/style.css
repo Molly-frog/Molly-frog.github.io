@@ -1,0 +1,165 @@
+body{
+	font-family: "Futura", sans-serif;
+	background-color: #fbe48c;
+	color: #c00000;
+	font-size: 25px;
+}
+.grid{
+	display: grid;
+	height: 100vh;
+	grid:
+	'head head' 100px
+	'main main' 1fr
+	'foot foot' 150px
+	/1fr 1fr;
+}
+.foot{
+	grid-area: foot;
+	font-size: 20px;
+	background-color: #c00000;
+	color: #ffffffff;
+	text-align: center;
+	padding: 30px;
+}
+.main{
+	display: grid;
+	grid-area: main;
+	grid:
+	'hero hero' 1fr
+	'image info' 500px
+	'infotwo imagetwo' 500px
+	/1fr 1fr;
+}
+.abtusmain{
+	grid-area: main;
+	display: grid;
+	grid:
+	'title title' 300px
+	'infothree  people' 1fr
+	/1fr 1fr;
+	text-align: center;
+}
+.menumain{
+	grid-area: main;
+	display: grid;
+	grid:
+	'titleimage titleimage titleimage' 300px
+	'popcornone popcorntwo toppings' 1fr
+	/1fr 1fr 1fr;
+}
+#popcornitembox{
+	grid-area: popcornone;
+	background-color: Cornsilk;
+	border-radius: 25px;			
+	width: 400px;
+	height: 400px;
+	background-clip: content-box;
+	border: 10px solid #fbe48c;
+}
+#toppings{
+	grid-area: toppings;
+	background-color: Cornsilk;
+	text-align: left;
+	padding-left: 48px;
+}
+#jeff{
+	grid-area: popcorntwo;
+}
+.popcornboxcontent{
+	padding-left: 48px;
+	padding-top: 15px;
+}
+#titleimage{	
+	grid-area: titleimage;
+	margin-left: 33%;
+}
+#aboutusimage{
+	grid-area: title;
+	margin-left: 115px;
+}
+#people{
+	grid-area: people;
+}
+#info3{
+	grid-area: infothree;
+	background-color: Cornsilk;
+	text-align: left;
+	padding: 100px;
+}
+#people{
+	grid-area: people;
+	background-color: Cornsilk;
+}
+.hero-image{
+	grid-area: hero;
+	background-image: url("media/red-trans.png");
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.hero-text{
+	grid-area: hero;
+	text-align: center;
+	margin-left: 70%;
+	margin-top: 15%;
+}
+.head{
+	background-color: Cornsilk;
+	grid-area: head;
+	font-size: 40px;
+	display: grid;
+	grid: 'logo name home abtus food' 100px /100px 10fr 3fr 3fr 3fr;
+}
+#logo{
+	grid-area: logo;
+}
+#name{
+	grid-area: name;
+	padding-top: 25px;
+	margin-left: 10px;
+}
+.head .links{
+	background-color: #fbe48c;
+	margin: 25px;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 25px;
+}
+#home{
+	grid-area: home;
+}
+#abtus{
+	grid-area: abtus;
+}
+#food{
+	grid-area: food;
+}
+a{
+	color: #c00000;
+}
+.main .info{
+	background-color: Cornsilk;
+	text-align: center;
+}
+#image1{
+	grid-area: image;
+	margin-top: 6%;
+	margin-left: 6%;
+}
+#image2{
+	grid-area: imagetwo;
+	margin-top: 6%;
+	margin-left: 6%;
+}
+#info{
+	grid-area: info;
+	padding: 50px;
+	text-align: left;
+}
+#infotwo{
+	grid-area: infotwo;
+	padding: 50px;
+	text-align: left;
+}
