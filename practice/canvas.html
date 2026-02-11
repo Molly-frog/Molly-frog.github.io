@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<title>This is a canvas</title>
+	<style>
+	canvas{
+		border: black 1px solid;
+	}
+	</style>
+</head>
+<body>
+	<h1>This is a canvas</h1>
+	<canvas id="canvas" width="800" height="800">
+	</canvas>
+	<script>
+	const canvas = document.getElementById("canvas");
+	const ctx = canvas.getContext("2d");
+
+	//draw a green rectangle
+	ctx.fillStyle = "purple";
+	ctx.fillRect(0,0,800,800);
+	
+	ctx.fillStyle = "green";
+	ctx.fillRect(100,100,200,300);
+
+	ctx.fillStyle = "red";
+	ctx.fillRect(350,50,100,100);
+
+	//Black circle in the middle of the screen
+	ctx.fillStyle = "black";
+	ctx.strokeStyle = "red";
+	ctx.lineWidth = 10;
+	
+	//Draw the shape
+	ctx.beginPath();
+	ctx.arc(400,400,100,0,Math.PI/2);
+	
+	//Fill it in
+	ctx.fill();
+	ctx.stroke();
+	
+	//Blue ellipse
+	ctx.fillStyle = "blue";
+	ctx.beginPath();
+	ctx.ellipse(
+		400,600,  //x,y of the center
+		300,	 //x radius
+		100,	 //y radius
+		Math.PI/3,	 //rotation
+		0,	 //start
+		2*Math.PI//stop
+	);
+	ctx.fill();
+
+	//Drawing a trianngle 
+	ctx.fillStyle = "pink";
+	ctx.beginPath();
+	ctx.moveTo(700,10);
+	ctx.lineTo(790,150);
+	ctx.lineTo(610,150);
+	ctx.lineTo(700,10);
+	ctx.stroke();
+	ctx.fill();
+	</script>
+</body>
+</html>
