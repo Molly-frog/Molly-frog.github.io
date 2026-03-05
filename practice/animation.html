@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<title>Animation</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="800" height="800"></canvas>
+	<script>
+	const canvas = document.getElementById("myCanvas");
+	const ctx = canvas.getContext("2d");
+	let x = 1;
+	let x2 = 1;
+	let speed = 5;
+	let speed2 = 6;
+	let time = 0;
+	
+	function animate(){
+		time = time + 1;
+		x = x + speed;
+		x2 = x2 + speed2;
+		
+		if(time < 160) {
+		x = x + speed;
+		}
+		
+		if(time < 160){
+		x2 = x2 + speed2;
+		}	
+		/*
+		if(x > 800){
+		x = 0;
+		}
+
+		if(x2 > 800){
+		x2 = 0; 
+		}
+		*/
+
+		ctx.fillStyle = "blue";	
+		ctx.clearRect(0,0,800,800);
+		ctx.fillRect(x,100,100,100);
+		
+		ctx.fillStyle = "purple";
+		ctx.fillRect(x2,400,100,100);
+		
+		requestAnimationFrame(animate);
+	}
+	
+		animate();
+	</script>
+</body>
+</html>

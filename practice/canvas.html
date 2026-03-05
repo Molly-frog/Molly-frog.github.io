@@ -54,11 +54,14 @@
 	//Drawing a trianngle 
 	ctx.fillStyle = "pink";
 	ctx.beginPath();
-	ctx.moveTo(700,10);
-	ctx.lineTo(790,150);
-	ctx.lineTo(610,150);
-	ctx.lineTo(700,10);
-	ctx.stroke();
+	ctx.moveTo(700,0);
+	ctx.lineTo(790,100);
+	ctx.lineTo(600,100);
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.arc(650,125,55,0,2*Math.PI);
+	ctx.arc(740,125,55,0,2*Math.PI);
 	ctx.fill();
 	</script>
 </body>

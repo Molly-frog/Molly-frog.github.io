@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<title>Functions</title>
+</head>
+<body>
+	<h1>Here be Functions</h1>
+	<script>
+		// this returns nothing
+		// it interacts with the brower
+		console.log("test");//calling or executing
+		
+		// defining a function
+		function sayHi(){
+			console.log("Hi");
+		}
+
+		// call/excute the function
+		sayHi();
+
+		//functions can take parameters
+		function sayHiToSomeone(who){
+			console.log("hi "+who);
+		}
+
+		sayHiToSomeone("Molly");
+
+		//functions can have many parameters
+		function sayHiToTwoPeople(who, whom){
+			console.log("Hello " + who + " and " + whom);
+		}
+
+		sayHiToTwoPeople("Romeo", "Juliet");
+	</script>
+</body>
+</html>
