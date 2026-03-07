@@ -10,4 +10,4 @@ The most important variables are havehat which is a boolean that tracks if you h
 
 ## Map
 
-![Map](/game/map.jpg)
+![Map](/locations.jpg)
