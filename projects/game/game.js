@@ -1,5 +1,6 @@
 let gameActive = true; //this variable is required. 
                        //to stop the game, set it to false.
+let haveHat = false;
 
 //Declare your other global variables here
 
