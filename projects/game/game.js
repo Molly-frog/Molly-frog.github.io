@@ -64,7 +64,7 @@ function start(){
   \\_/ \\_| |_/\\____/  \\____/  \\_/ \\_| \\_\\_| |_/\\/  \\/   \\_| |_/\\_| |_/\\_/  
 	`;
 
-	printAscii(myTitle, "white");
+	printAscii(myTitle, "#a32222");
 	print("\n\n\n");
 	print("Type Start to continue!!");
 

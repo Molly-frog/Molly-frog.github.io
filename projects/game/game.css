@@ -1,15 +1,17 @@
 body {
     margin: 0;
     padding: 20px;
-    background-color: #1e1e1e;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
+    background-image: url(./Images/backgroundOcean.png);
+    /* Got the image off of Canva*/
+    font-family: "Futura", sans-serif;
+    color: #01579b;
     height: 100vh;
     box-sizing: border-box;
 }
 
 h1{
     text-align: center;
+    color: #d32f2f;
 }
 
 .location{
@@ -24,9 +26,9 @@ h1{
     flex-direction: column;
     max-width: 80%;
     margin: 0 auto;
-    border: 2px solid #00ff00;
+    border: 4px solid #5d4037;
     padding: 20px;
-    background-color: #000;
+    background-color: #ffe7a8;
     overflow: hidden;
 }
 
@@ -43,7 +45,7 @@ h1{
 #input-line {
     display: flex;
     align-items: center;
-    border-top: 1px solid #00ff00;
+    border-top: 2px solid #01579b;
     padding-top: 10px;
 }
 
@@ -57,18 +59,17 @@ h1{
     flex: 1;
     background: transparent;
     border: none;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
+    color: #01579b;
     font-size: 16px;
     outline: none;
 }
 
 #user-input::placeholder {
-    color: #008800;
+    color: #01579b;
 }
 
 .ascii-art {
-    color: #00ff00;
+    color: #01579b;
     line-height: 1.2;
     font-size: 12px;
 }
