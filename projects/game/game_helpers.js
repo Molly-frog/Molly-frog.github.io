@@ -74,6 +74,6 @@ function waitThenCall(target){
 }
 
 function stayHere(){
-    print("\nsorry, I don't understand your input. I'll assume you " +
-        "want to stay here");
+    print("\nThe Gnomes running your computer didn't understand that soo" +
+        "oooo they're keeping you here just because....");
 }

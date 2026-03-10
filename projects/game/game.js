@@ -69,7 +69,11 @@ function start(){
 	print("Type Start to continue!!");
 
     function processInput(input){
+        if (input.toLowerCase() === "start") {
             context();
+        } else {
+            stayHere();
+        }
     }
     waitForInput(processInput);
 }
@@ -93,9 +97,14 @@ function context(){
     
 	print("Type Deck to start your journey");
 
-	function processInput(input){
-        deck();
-    	}
-    	
+  	  function processInput(input){
+        	if (input.toLowerCase() === "deck") {
+			deck()
+ 	       }else{
+		        stayHere();
+		        waitThenCall(start);
+        	}
+	  }
+    
 	waitForInput(processInput);
 }
