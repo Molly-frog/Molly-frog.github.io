@@ -1,4 +1,3 @@
-
 // This function prints text out to the terminal
 function print(text) {
     const output = document.getElementById('output');
@@ -12,12 +11,29 @@ function print(text) {
 //it just makes sure that HTML doesn't mess with spacing
 //tip - ASCII art will need to escape any backslashes!
 //      so to print \, you'll need to say \\
-function printAscii(art) {
+function printAscii(art, color) {
     const output = document.getElementById('output');
     const pre = document.createElement('pre');
     pre.className = 'ascii-art';
+    if (color) {
+	pre.style = "color: " + color + ";";
+    }
     pre.textContent = art;
     output.appendChild(pre);
+    output.scrollTop = output.scrollHeight;
+}
+
+function colorMe(content, color) {
+// four strings cated together
+    result = "<span style='color: " + color + "'>" + content + "</span>";
+	return result;
+}
+
+function insertImage(srcLoc) {
+    const output = document.getElementById('output');
+    const img = document.createElement('img');
+    img.src = srcLoc;
+    output.appendChild(img);
     output.scrollTop = output.scrollHeight;
 }
 
@@ -42,7 +58,7 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
     }
 });
 
-//This function will be overridden by the current game state
+clear//This function will be overridden by the current game state
 function handleInput(input) {
     console.log("No handler for input: " + input);
 }
