@@ -1,6 +1,6 @@
 let gameActive = true; //this variable is required. 
                        //to stop the game, set it to false.
-let haveHat = false;
+let hasHat = false;
 
 //Declare your other global variables here
 
@@ -11,24 +11,34 @@ let haveHat = false;
 //Make one function for each location
 function deck() {
     clear();
-    print("\nYou are on the deck!");
+    print("\nYou are on the deck! As you look up at the bright sky you see" + 
+    " 4 places that the hat could be!");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationB");
+        "\n\tKitchen" + 
+    	"\n\tGym" +
+    	"\n\tFish" +
+    	"\n\tCabin (dont go here)");
     
     function processInput(input){
-        if (input.toLowerCase() === "locationb") {
-            locationB();
-        } else {
-            stayHere();
-            waitThenCall(locationA);
+        if (input.toLowerCase() === "kitchen") {
+		kitchen();
+        } else if (input.toLowerCase() == "gym") {
+		gym();
+	} else if (input.toLowerCase() == "fish") {
+		fish();
+	} else if (input.toLowerCase() == "cabin") {
+		context();
+	} else {
+		stayHere();
+		waitThenCall(deck);
         }
     }
     waitForInput(processInput);
 }
 
-function locationB() {
+function kitchen() {
     clear();
-    print("\nYou are in location B!");
+    print("\nYou are in the Kitchen!");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tlocationA");
     
@@ -66,6 +76,7 @@ function start(){
 
 	printAscii(myTitle, "#a32222");
 	print("\n\n\n");
+	let start = " Start "
 	print("Type Start to continue!!");
 
     function processInput(input){
@@ -80,31 +91,47 @@ function start(){
 
 function context(){
 	clear();
-	print("\n");
-	print("You are a fisherman, one day, while sitting on your tiny boat getting ready to go back to you tiny island, a biggg storm hits your waters. You try to stay afloat but ... OHH NOOO... the storm is bigger than you had expected and you go over board...");
 
-	print("\n");
+	if (hasHat == false){
+		print("\n");
+		print("You are a fisherman, one day, while sitting on your" + 
+		"tiny boat getting ready to go back to you tiny island," + 
+		" a biggg storm hits your waters. You try to stay afloat" + 
+		" but ... OHH NOOO... the storm is bigger than you had " + 
+		"expected and you go over board...");
+		
+		print("\n");
 
-	print("You wake up in a daze. It appears that you have woken up on the Thousand Sunny, the ship of the infamous Straw Hat Pirates. After waking up in the ship's cabin, you informally meet Captain Monkey D. Luffy, who is sleeping, but it appears that he is trying to say something......?");
-	
-	print("\n");
-	
-	print("heEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU tryin’ to STArttt a fighttt…. SNOOORRRREEEEE");
-	
-	print("\n");
+		print("You wake up in a daze. It appears that you have " + 
+		"woken up on the Thousand Sunny, the ship of the infamous " + 
+		"Straw Hat Pirates. After waking up in the ship's cabin, you " +
+		"informally meet Captain Monkey D. Luffy, who is sleeping, " + 
+		"but it appears that he is trying to say something......?");
 
-	print("GASP…..he saved your life, but he’s lost his most precious treasure: his Straw Hat. To repay his kindness, you decide to search the ship and find his missing hat!!");
-    
-	print("Type Deck to start your journey");
+		print("\n");
 
-  	  function processInput(input){
-        	if (input.toLowerCase() === "deck") {
+		print("heEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
+		"tryin’ to STArttt a fighttt…. SNOOORRRREEEEE");
+
+		print("\n");
+
+		print("GASP…..he saved your life, but he’s lost his most " + 
+		"precious treasure: his Straw Hat. To repay " + 
+		"his kindness, you decide to search the ship and find his " + 
+		"missing hat!!");
+
+		print("Type Deck to start your journey");
+	} else{
+		print("idk if this works yayayaayyay");
+	}
+	function processInput(input){
+		if (input.toLowerCase() === "deck") {
 			deck()
- 	       }else{
-		        stayHere();
+		} else {
+			stayHere();
 		        waitThenCall(start);
         	}
-	  }
+	}
     
 	waitForInput(processInput);
 }
