@@ -83,6 +83,31 @@ function kitchen() {
 	waitForInput(processInput);
 }
 
+function namiRoom() {
+	clear();
+	print("\nYou make your way to Nami's room, upon entering you " + 
+		"immediately regret all life decisions!");
+	print("\nWho are you? the woman practically hisses. You try to " +
+		"speak but before you are able to finish your sentence " +
+		"she drags you over the edge of the ship!!");
+
+	print("\nCongratulations! You've been thrown over board, wow your " +
+		"weak, you need to level up....");
+
+	print("\nEnding: With the fishes... would you like to restart?");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "yes") {
+			clear();
+			start();
+    	    } //else {
+    	        //print("Okay well drowning is no fun so your going to anyway...");
+		//start();
+    	    //}
+    	}
+	waitForInput(processInput);
+}
+
 function gym() {
 	clear();
 	print("\nYou are in the Gym!");
