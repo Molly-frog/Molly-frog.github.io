@@ -102,8 +102,7 @@ function namiRoom() {
 		} else if (input.toLowerCase() == "no") {
 			print("Okay well drowning is no fun so just go back");
 		}
-		
-	    }
+	
     	}
 	waitForInput(processInput);
 }
