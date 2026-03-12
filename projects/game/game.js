@@ -2,13 +2,8 @@ let gameActive = true; //this variable is required.
                        //to stop the game, set it to false.
 let hasHat = false;
 
-//Declare your other global variables here
-
-
 //If you need, add any "helper" functions here
 
-
-//Make one function for each location
 function deck() {
     clear();
     print("\nYou are on the deck! As you look up at the bright sky you see" + 
@@ -37,22 +32,98 @@ function deck() {
 }
 
 function kitchen() {
-    clear();
-    print("\nYou are in the Kitchen!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationA");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "locationa") {
-            locationA();
-        } else {
-            stayHere();
-            waitThenCall(locationB);
-        }
-    }
-    waitForInput(processInput);
+	clear();
+	print("\nYou are in the Kitchen!");
+	print("\nIt smells like Sanji is cooking something yummy! He turns" + 
+		" to greet you as you approach, the savory smell of fresh " + 
+		"reindeer filling the air as you meet his tony gaze."); 
+
+	if (hasHat == false){
+		print("\nWasting no time, you ask if he has seen Luffy's " + 
+			"hat. He pauses, considering for a moment. \n" +
+			"Sorry, I havent seen it around. Have you searched " +
+			"the rest of the ship? I'd be happy to look in " + 
+			"Nami's room with you...");
+
+		print("\nWell, that was... oddly specefic. Though, now that" +
+			"though now that you think about it, there's a " + 
+			"chance the hat is with Nami.");
+
+		print("\n\n");
+
+    		print("\nWhere do you want to go next? Say one of these choices:" +
+    			"\n\tDeck" + 
+			"\n\tNami's Room");
+
+
+    		function processInput(input){
+        		if (input.toLowerCase() === "deck") {
+           	 		deck();
+    	   	 	} else if (input.toLowerCase() == "nami's room"){
+    	        		namiRoom();
+			} else{
+				stayHere();
+    	        		waitThenCall(kitchen);
+    	   	 	}
+
+		}
+    	} else {
+		print("He laughs" + "\nYour kidding right?" + 
+			"\n\tGo bacl to the Deck");
+	
+    		function processInput(input){
+        		if (input.toLowerCase() === "deck") {
+           	 		deck();
+			} else{
+				stayHere();
+    	        		waitThenCall(kitchen);
+    	   	 	}
+		}
+	}
+	waitForInput(processInput);
 }
 
+function gym() {
+	clear();
+	print("\nYou are in the Gym!");
+	print("\n");
+
+
+    	print("\nWhere do you want to go next? Say one of these choices:" +
+        	"\n\tlocationA");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "locationa") {
+           	 locationA();
+    	    } else {
+    	        stayHere();
+    	        waitThenCall(locationB);
+    	    }
+    	}
+
+	waitForInput(processInput);
+}
+
+function fish() {
+	clear();
+	print("\nYou are in the Kitchen!");
+	print("\n");
+
+
+    	print("\nWhere do you want to go next? Say one of these choices:" +
+        	"\n\tlocationA");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "locationa") {
+           	 locationA();
+    	    } else {
+    	        stayHere();
+    	        waitThenCall(locationB);
+    	    }
+    	}
+
+	waitForInput(processInput);
+}
 //finally, make sure you customize this to tell it what should happen at the
 //very start. For this simple example, any input will bring you
 //to locationA
