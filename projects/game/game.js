@@ -1,5 +1,4 @@
-let gameActive = true; //this variable is required. 
-                       //to stop the game, set it to false.
+let gameActive = true; 
 let hasHat = false;
 
 //If you need, add any "helper" functions here
@@ -69,7 +68,7 @@ function kitchen() {
 		}
     	} else {
 		print("He laughs" + "\nYour kidding right?" + 
-			"\n\tGo bacl to the Deck");
+			"\n\tGo back to the Deck");
 	
     		function processInput(input){
         		if (input.toLowerCase() === "deck") {
@@ -94,16 +93,17 @@ function namiRoom() {
 	print("\nCongratulations! You've been thrown over board, wow your " +
 		"weak, you need to level up....");
 
-	print("\nEnding: With the fishes... would you like to restart?");
+	print("\nEnding: With the fishes... would you like to restart?" + 
+		" yes or no");
     
     	function processInput(input){
         	if (input.toLowerCase() === "yes") {
-			clear();
 			start();
-    	    } //else {
-    	        //print("Okay well drowning is no fun so your going to anyway...");
-		//start();
-    	    //}
+		} else if (input.toLowerCase() == "no") {
+			print("Okay well drowning is no fun so just go back");
+		}
+		
+	    }
     	}
 	waitForInput(processInput);
 }
@@ -133,6 +133,27 @@ function fish() {
 	clear();
 	print("\nYou are in the Kitchen!");
 	print("\n");
+
+
+    	print("\nWhere do you want to go next? Say one of these choices:" +
+        	"\n\tlocationA");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "locationa") {
+           	 locationA();
+    	    } else {
+    	        stayHere();
+    	        waitThenCall(locationB);
+    	    }
+    	}
+
+	waitForInput(processInput);
+}
+
+function wheel() {
+	clear();
+	print("\nYou are in at the helm of the boat!");
+	print("\nOhhhh look its the ships wheel....");
 
 
     	print("\nWhere do you want to go next? Say one of these choices:" +
@@ -225,7 +246,7 @@ function context(){
 			deck()
 		} else {
 			stayHere();
-		        waitThenCall(start);
+		        waitThenCall(context);
         	}
 	}
     

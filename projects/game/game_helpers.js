@@ -58,7 +58,7 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
     }
 });
 
-clear//This function will be overridden by the current game state
+//This function will be overridden by the current game state
 function handleInput(input) {
     console.log("No handler for input: " + input);
 }
