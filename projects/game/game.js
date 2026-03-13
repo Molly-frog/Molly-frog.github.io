@@ -1,6 +1,11 @@
 let gameActive = true; 
 let hasHat = false;
 
+function gameOver(){
+	if (gameActive == false){
+		start();
+	}
+}
 //If you need, add any "helper" functions here
 
 function deck() {
@@ -10,7 +15,7 @@ function deck() {
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tKitchen" + 
     	"\n\tGym" +
-    	"\n\tFish" +
+    	"\n\tContinue exploring Deck (Type: explore)" +
     	"\n\tCabin (dont go here)");
     
     function processInput(input){
@@ -18,8 +23,8 @@ function deck() {
 		kitchen();
         } else if (input.toLowerCase() == "gym") {
 		gym();
-	} else if (input.toLowerCase() == "fish") {
-		fish();
+	} else if (input.toLowerCase() == "explore") {
+		explore();
 	} else if (input.toLowerCase() == "cabin") {
 		context();
 	} else {
@@ -35,7 +40,7 @@ function kitchen() {
 	print("\nYou are in the Kitchen!");
 	print("\nIt smells like Sanji is cooking something yummy! He turns" + 
 		" to greet you as you approach, the savory smell of fresh " + 
-		"reindeer filling the air as you meet his tony gaze."); 
+		"reindeer filling the air as you meet his gaze."); 
 
 	if (hasHat == false){
 		print("\nWasting no time, you ask if he has seen Luffy's " + 
@@ -67,7 +72,9 @@ function kitchen() {
 
 		}
     	} else {
-		print("He laughs" + "\nYour kidding right?" + 
+		print("He doesnt bother to look up, instead asking you if Ussop" +
+			"had finished fishing for dinner. You decide it isnt " +
+			"talking to him and leave." +
 			"\n\tGo back to the Deck");
 	
     		function processInput(input){
@@ -91,18 +98,18 @@ function namiRoom() {
 		"she drags you over the edge of the ship!!");
 
 	print("\nCongratulations! You've been thrown over board, wow your " +
-		"weak, you need to level up....");
+		"weak, you need to work out or something man....");
 
 	print("\nEnding: With the fishes... would you like to restart?" + 
 		" yes or no");
     
     	function processInput(input){
         	if (input.toLowerCase() === "yes") {
-			start();
+			gameActive = false;
+			gameOver();
 		} else if (input.toLowerCase() == "no") {
 			print("Okay well drowning is no fun so just go back");
 		}
-	
     	}
 	waitForInput(processInput);
 }
@@ -128,24 +135,33 @@ function gym() {
 	waitForInput(processInput);
 }
 
-function fish() {
+function explore() {
 	clear();
-	print("\nYou are in the Kitchen!");
-	print("\n");
+	print("\nAs you continue to explore the deck, you see a manlike " +
+		"figure in the distance. Its Ussop! He gives you a crooked " + 
+		"smile. It seems like you've interupted his fishing, yet he " +
+		"still waves you over.");
 
-
-    	print("\nWhere do you want to go next? Say one of these choices:" +
-        	"\n\tlocationA");
+    	print("\nWhat do you want to do next? Say one of these choices:" +
+        	"\n\tWheel" +
+		"\n\tTalk to Ussop (Type: Ussop)" +
+		"\n\tDeck" + 
+		"\n\tNami's Room");
     
     	function processInput(input){
-        	if (input.toLowerCase() === "locationa") {
-           	 locationA();
-    	    } else {
-    	        stayHere();
-    	        waitThenCall(locationB);
+        	if (input.toLowerCase() === "wheel") {
+			wheel();
+		} else if (input.toLowerCase() === "deck") {
+			deck();
+		} else if (input.toLowerCase() === "nami's room") {
+			namiRoom();
+		} else if (input.toLoverCase() === "ussop"){
+			ussop();
+		}else {
+    	        	stayHere();
+    	        	waitThenCall(explore);
     	    }
     	}
-
 	waitForInput(processInput);
 }
 
@@ -153,25 +169,38 @@ function wheel() {
 	clear();
 	print("\nYou are in at the helm of the boat!");
 	print("\nOhhhh look its the ships wheel....");
+	
+	print("Would you like to go try and steer the ship???? Or go back?" + 
+		"\n\tExplore the deck again?" + 
+		"\n\tSteer the wheel (Type: Steer)");
 
-
-    	print("\nWhere do you want to go next? Say one of these choices:" +
-        	"\n\tlocationA");
-    
     	function processInput(input){
-        	if (input.toLowerCase() === "locationa") {
-           	 locationA();
-    	    } else {
-    	        stayHere();
-    	        waitThenCall(locationB);
-    	    }
-    	}
-
+        	if (input.toLowerCase() === "explore") {
+			explore();
+		} else if (input.toLowerCase() === "steer") {
+			print("The steering wheel calls to you like a beacon in the night. It's decided, you must steer the ship. Taking hold of the wheel, you find steering much easier than you once thought. 30 seconds in and all is going smoothly---is that an iceberg??? The ship crashes, and you are killed in the collision.");
+			print("\nEnding: Titanic\nWould you like to restart?" +
+			" Type: Yes or No");
+			
+			function processInput(input){
+        			if (input.toLowerCase() === "yes") {
+					clear();
+					gameActive = false;
+					gameOver();
+				} else if (input.toLowerCase() === "no") {
+					print("You sure??");
+				} else {
+					stayHere();
+				}
+			waitForInput(processInput);
+			} 
+    		} else {
+		stayHere();
+		}
+	}
 	waitForInput(processInput);
 }
-//finally, make sure you customize this to tell it what should happen at the
-//very start. For this simple example, any input will bring you
-//to locationA
+
 function start(){
 	let myTitle = `
  _    _  ___   _   _ _____ ___________                                    
