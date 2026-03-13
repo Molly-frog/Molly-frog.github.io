@@ -2,7 +2,9 @@ let gameActive = true;
 let hasHat = false;
 
 function gameOver(){
+	gameActive = false;
 	if (gameActive == false){
+		clear();
 		start();
 	}
 }
@@ -15,7 +17,7 @@ function deck() {
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tKitchen" + 
     	"\n\tGym" +
-    	"\n\tContinue exploring Deck (Type: explore)" +
+    	"\n\tContinue exploring Deck (Type: Explore)" +
     	"\n\tCabin (dont go here)");
     
     function processInput(input){
@@ -105,7 +107,6 @@ function namiRoom() {
     
     	function processInput(input){
         	if (input.toLowerCase() === "yes") {
-			gameActive = false;
 			gameOver();
 		} else if (input.toLowerCase() == "no") {
 			print("Okay well drowning is no fun so just go back");
@@ -144,7 +145,7 @@ function explore() {
 
     	print("\nWhat do you want to do next? Say one of these choices:" +
         	"\n\tWheel" +
-		"\n\tTalk to Ussop (Type: Ussop)" +
+		"\n\tTalk to Ussop (Type: Usopp)" +
 		"\n\tDeck" + 
 		"\n\tNami's Room");
     
@@ -155,7 +156,7 @@ function explore() {
 			deck();
 		} else if (input.toLowerCase() === "nami's room") {
 			namiRoom();
-		} else if (input.toLoverCase() === "ussop"){
+		} else if (input.toLoverCase() === "usopp"){
 			ussop();
 		}else {
     	        	stayHere();
@@ -185,20 +186,19 @@ function wheel() {
 			function processInput(input){
         			if (input.toLowerCase() === "yes") {
 					clear();
-					gameActive = false;
 					gameOver();
 				} else if (input.toLowerCase() === "no") {
 					print("You sure??");
 				} else {
 					stayHere();
 				}
-			waitForInput(processInput);
 			} 
+			waitForInput(processInput);
     		} else {
 		stayHere();
 		}
 	}
-	waitForInput(processInput);
+	//waitForInput(processInput);
 }
 
 function start(){
