@@ -1,4 +1,4 @@
-let gameActive = true; 
+let gameActive = true;
 let hasHat = false;
 
 function gameOver(){
@@ -8,7 +8,78 @@ function gameOver(){
 		start();
 	}
 }
-//If you need, add any "helper" functions here
+
+function talk() {
+	clear();
+	print("Would you like to go fishing with me? He asks It's no fun " +
+		"without company. Type: Yes or No");
+
+	function processInput(input){
+		if (input.toLowerCase() === "no") {
+			print("Thinking no harm...wait you said no? Oh uh..." +
+				" I mean harm could come " + 
+				"from it even though you are a fisher. " + 
+				"You say no. " +
+				"\n**Silience**" + "\nOkayyy he says as you " +
+				"stand there akwardly....");
+			print("\nWould you like leave? Type: Yes or Yes");
+
+			function processInput(input){
+				if (input.toLowerCase() === "yes") {
+					clear();
+					explore();
+				} else {
+					print("There was only option why are " +
+						"you still here????");
+				}
+			} 
+			waitForInput(processInput);
+		} else if (input.toLowerCase() === "yes") {
+			print("\nThinking no harm could come from it, you join " + 
+			"Usopp on his quest for dinner. After another small " + 
+			"tug, you pull in your line, but to no avail. Almost " + 
+			"giving up, you lower your line again, but just then " +
+			"a heavy weight pulls at your fishing pole. ");
+
+			print("\nIve got something! You shout excitedly, Usopp " + 
+			"cheering you on. However, your excitement quickly " +
+			"turns to dread as the weight threatens to pull you overboard.");
+
+			print("\nHelp you shout as Usopp grabs you by the " + 
+			"shirt, keeping you from swan-diving into the ocean. " +
+			"Using the last of your strength, you yank the line " +
+			"out of the water, the fishing pole snapping in half " +
+			"as a result. When the struggle finally ends, you hold " +
+			"up your spoils of war. It’s a single minnow.");
+			
+			print("\nMaybe you should hit the gym some more dude, " +
+			"that was pathetic… Usopp suggests with a blank stare.");
+
+			print("\nWould you like to throw yourself overboard to " + 
+				"spare yourself the humiliation Or act like it " +
+				"never happened?" + 
+				"\n\tRestart" +
+				"\n\tThrow yourself overbaord(Type: overbaord)");
+
+			function processInput(input){
+        			if (input.toLowerCase() === "restart") {
+					gameOver();
+				} else if (input.toLowerCase() === "overbaord") {
+					print("Ending: Sharks and Minows");
+				} else {
+					stayHere();
+					waitThenCall(usopp);
+				}
+			} 
+			waitForInput(processInput);
+		} else {
+			stayHere();
+			waitThenCall(ussop);
+		}
+		waitForInput(processInput);
+	}
+	waitForInput(processInput);
+}
 
 function deck() {
     clear();
@@ -76,8 +147,8 @@ function kitchen() {
     	} else {
 		print("He doesnt bother to look up, instead asking you if Ussop" +
 			"had finished fishing for dinner. You decide it isnt " +
-			"talking to him and leave." +
-			"\n\tGo back to the Deck");
+			"worth talking to him and leave." +
+			"\n\tGo back to the Deck?");
 	
     		function processInput(input){
         		if (input.toLowerCase() === "deck") {
@@ -139,13 +210,13 @@ function gym() {
 function explore() {
 	clear();
 	print("\nAs you continue to explore the deck, you see a manlike " +
-		"figure in the distance. Its Ussop! He gives you a crooked " + 
-		"smile. It seems like you've interupted his fishing, yet he " +
+		"figure in the distance. Its Ussop! It seems like you've " +
+		"interupted his fishing, yet he " +
 		"still waves you over.");
 
     	print("\nWhat do you want to do next? Say one of these choices:" +
         	"\n\tWheel" +
-		"\n\tTalk to Ussop (Type: Usopp)" +
+		"\n\tTalk to Usopp (Type: Usopp)" +
 		"\n\tDeck" + 
 		"\n\tNami's Room");
     
@@ -156,12 +227,12 @@ function explore() {
 			deck();
 		} else if (input.toLowerCase() === "nami's room") {
 			namiRoom();
-		} else if (input.toLoverCase() === "usopp"){
-			ussop();
+		} else if (input.toLowerCase() === "usopp") {
+			talk();
 		}else {
     	        	stayHere();
     	        	waitThenCall(explore);
-    	    }
+    	    	}
     	}
 	waitForInput(processInput);
 }
@@ -179,7 +250,12 @@ function wheel() {
         	if (input.toLowerCase() === "explore") {
 			explore();
 		} else if (input.toLowerCase() === "steer") {
-			print("The steering wheel calls to you like a beacon in the night. It's decided, you must steer the ship. Taking hold of the wheel, you find steering much easier than you once thought. 30 seconds in and all is going smoothly---is that an iceberg??? The ship crashes, and you are killed in the collision.");
+			print("The steering wheel calls to you like a beacon " +
+			"in the night. It's decided, you must steer the ship. " +
+			"Taking hold of the wheel, you find steering much easier " +
+			"than you once thought. 30 seconds in and all is going " +
+			"smoothly---is that an iceberg??? The ship crashes, " +
+			"and you are killed in the collision.");
 			print("\nEnding: Titanic\nWould you like to restart?" +
 			" Type: Yes or No");
 			
