@@ -1,12 +1,202 @@
+////////////// VARIABLES ////////////
+
 let gameActive = true;
 let hasHat = false;
+
+/////////// HELPER FUNCTION //////////
 
 function gameOver(){
 	gameActive = false;
 	if (gameActive == false){
 		clear();
 		start();
+	} else {
+		clear();
+		context();
 	}
+}
+
+//////// LOCATIONS ///////////////
+
+function gym() {
+	clear();
+	print("\nWhen you enter the gym, stacks of weights line the wall " +
+	"behind various exercise machines, whose names you can’t quite pronounce.");
+	print("\nZoro calls you over from where he’s inspecting the dumbbells, " +
+		"saying: \nWanna work out? You look like you could use it.");
+
+
+    	print("\nWhat do you want to do next? Say one of these choices:" +
+        	"\n\tDeck" +
+		"\n\tWorkout");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "workout") {
+			print("\nYou feel a bit annoyed by the subtle insult, " + 
+				"but one look at your noodle arms convinces you.");
+			print("\nAfter just a few minutes of working out you are " + 
+				"already exausted.");
+			print("\nWow your lamer than swirly brows Zoro mocks. " + 
+			"You should stop…maybe clean yourself up, you look " +
+				"like your dying or…already dead");
+			print("\nWhat would you like to do? Type one of these options:" + 
+				"\n\tGo to the bathroom (Type: Bathroom)" + 
+				"\n\tContinue to prove him wrong (Type: Continue)" + 
+				"\n\tBack to the Deck (Type: Deck)");
+			function processInput(input){
+				if (input.toLowerCase() === "deck"){
+					clear();
+					deck();
+				} else if (input.toLowerCase() === "bathroom") {
+					print("\nYou decide to take a bathroom " + 
+					"break. You finish your business, " + 
+					"wash your hands and catch your " +
+					"reflection in the mirror... you are " +
+					"wearing Luffy’s hat!!!??? Oops… ");
+					
+					print("\nThat’s kinda embarrassing but " +
+					"at least you found the hat… ig. Do " +
+					"you want to go back to the cabin and " +
+					"tell Luffy the great news?! Yes or No?");
+
+					function processInput(input) {
+						if (input.toLowerCase() === "yes") {
+							p
+						}
+					}
+				} else {
+					stayHere();
+				}
+			}
+			waitForInput(processInput);
+
+		 
+    	    } else if (input.toLowerCase() === "deck") {
+		    deck();
+	    } else {
+    	        stayHere();
+    	        waitThenCall(locationB);
+    	    }
+    	}
+	waitForInput(processInput);
+}
+
+function namiRoom() {
+	clear();
+	print("\nYou make your way to Nami's room, upon entering you " + 
+		"immediately regret all life decisions!");
+	print("\nWho are you? the woman practically hisses. You try to " +
+		"speak but before you are able to finish your sentence " +
+		"she drags you over the edge of the ship!!");
+
+	print("\nCongratulations! You've been thrown over board, wow your " +
+		"weak, you need to work out or something man....");
+
+	print("\nEnding: With the fishes... would you like to restart?" + 
+		" yes or no");
+    
+    	function processInput(input){
+        	if (input.toLowerCase() === "yes") {
+			gameOver();
+		} else if (input.toLowerCase() == "no") {
+			print("Okay well drowning is no fun so just go back");
+		}
+    	}
+	waitForInput(processInput);
+}
+
+function wheel() {
+	clear();
+	print("\nYou are in at the helm of the boat!");
+	print("\nOhhhh look its the ships wheel....");
+	
+	print("Would you like to go try and steer the ship???? Or go back?" + 
+		"\n\tExplore the deck again?" + 
+		"\n\tSteer the wheel (Type: Steer)");
+
+    	function processInput(input){
+        	if (input.toLowerCase() === "explore") {
+			explore();
+		} else if (input.toLowerCase() === "steer") {
+			print("The steering wheel calls to you like a beacon " +
+			"in the night. It's decided, you must steer the ship. " +
+			"Taking hold of the wheel, you find steering much easier " +
+			"than you once thought. 30 seconds in and all is going " +
+			"smoothly---is that an iceberg??? The ship crashes, " +
+			"and you are killed in the collision.");
+			print("\nEnding: Titanic\nWould you like to restart?" +
+			" Type: Yes or No");
+			
+			function processInput(input){
+        			if (input.toLowerCase() === "yes") {
+					clear();
+					gameOver();
+				} else if (input.toLowerCase() === "no") {
+					print("You sure??");
+				} else {
+					stayHere();
+				}
+			} 
+			waitForInput(processInput);
+    		} else {
+		stayHere();
+		}
+	}
+	//waitForInput(processInput);
+}
+
+function kitchen() {
+	clear();
+	print("\nYou are in the Kitchen!");
+	print("\nIt smells like Sanji is cooking something yummy! He turns" + 
+		" to greet you as you approach, the savory smell of fresh " + 
+		"reindeer filling the air as you meet his gaze."); 
+
+	if (hasHat == false){
+		print("\nWasting no time, you ask if he has seen Luffy's " + 
+			"hat. He pauses, considering for a moment. \n" +
+			"Sorry, I havent seen it around. Have you searched " +
+			"the rest of the ship? I'd be happy to look in " + 
+			"Nami's room with you...");
+
+		print("\nWell, that was... oddly specefic. Though, now that" +
+			"though now that you think about it, there's a " + 
+			"chance the hat is with Nami.");
+
+		print("\n\n");
+
+    		print("\nWhere do you want to go next? Say one of these choices:" +
+    			"\n\tDeck" + 
+			"\n\tNami's Room");
+
+
+    		function processInput(input){
+        		if (input.toLowerCase() === "deck") {
+           	 		deck();
+    	   	 	} else if (input.toLowerCase() == "nami's room"){
+    	        		namiRoom();
+			} else{
+				stayHere();
+    	        		waitThenCall(kitchen);
+    	   	 	}
+
+		}
+    	} else {
+		print("He doesnt bother to look up, instead asking you if Ussop" +
+			"had finished fishing for dinner. You decide it isnt " +
+			"worth talking to him and leave." +
+			"\n\tGo back to the Deck?");
+	
+    		function processInput(input){
+        		if (input.toLowerCase() === "deck") {
+           	 		deck();
+			} else{
+				stayHere();
+    	        		waitThenCall(kitchen);
+    	   	 	}
+		}
+	}
+	waitForInput(processInput);
 }
 
 function talk() {
@@ -81,132 +271,6 @@ function talk() {
 	waitForInput(processInput);
 }
 
-function deck() {
-    clear();
-    print("\nYou are on the deck! As you look up at the bright sky you see" + 
-    " 4 places that the hat could be!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tKitchen" + 
-    	"\n\tGym" +
-    	"\n\tContinue exploring Deck (Type: Explore)" +
-    	"\n\tCabin (dont go here)");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "kitchen") {
-		kitchen();
-        } else if (input.toLowerCase() == "gym") {
-		gym();
-	} else if (input.toLowerCase() == "explore") {
-		explore();
-	} else if (input.toLowerCase() == "cabin") {
-		context();
-	} else {
-		stayHere();
-		waitThenCall(deck);
-        }
-    }
-    waitForInput(processInput);
-}
-
-function kitchen() {
-	clear();
-	print("\nYou are in the Kitchen!");
-	print("\nIt smells like Sanji is cooking something yummy! He turns" + 
-		" to greet you as you approach, the savory smell of fresh " + 
-		"reindeer filling the air as you meet his gaze."); 
-
-	if (hasHat == false){
-		print("\nWasting no time, you ask if he has seen Luffy's " + 
-			"hat. He pauses, considering for a moment. \n" +
-			"Sorry, I havent seen it around. Have you searched " +
-			"the rest of the ship? I'd be happy to look in " + 
-			"Nami's room with you...");
-
-		print("\nWell, that was... oddly specefic. Though, now that" +
-			"though now that you think about it, there's a " + 
-			"chance the hat is with Nami.");
-
-		print("\n\n");
-
-    		print("\nWhere do you want to go next? Say one of these choices:" +
-    			"\n\tDeck" + 
-			"\n\tNami's Room");
-
-
-    		function processInput(input){
-        		if (input.toLowerCase() === "deck") {
-           	 		deck();
-    	   	 	} else if (input.toLowerCase() == "nami's room"){
-    	        		namiRoom();
-			} else{
-				stayHere();
-    	        		waitThenCall(kitchen);
-    	   	 	}
-
-		}
-    	} else {
-		print("He doesnt bother to look up, instead asking you if Ussop" +
-			"had finished fishing for dinner. You decide it isnt " +
-			"worth talking to him and leave." +
-			"\n\tGo back to the Deck?");
-	
-    		function processInput(input){
-        		if (input.toLowerCase() === "deck") {
-           	 		deck();
-			} else{
-				stayHere();
-    	        		waitThenCall(kitchen);
-    	   	 	}
-		}
-	}
-	waitForInput(processInput);
-}
-
-function namiRoom() {
-	clear();
-	print("\nYou make your way to Nami's room, upon entering you " + 
-		"immediately regret all life decisions!");
-	print("\nWho are you? the woman practically hisses. You try to " +
-		"speak but before you are able to finish your sentence " +
-		"she drags you over the edge of the ship!!");
-
-	print("\nCongratulations! You've been thrown over board, wow your " +
-		"weak, you need to work out or something man....");
-
-	print("\nEnding: With the fishes... would you like to restart?" + 
-		" yes or no");
-    
-    	function processInput(input){
-        	if (input.toLowerCase() === "yes") {
-			gameOver();
-		} else if (input.toLowerCase() == "no") {
-			print("Okay well drowning is no fun so just go back");
-		}
-    	}
-	waitForInput(processInput);
-}
-
-function gym() {
-	clear();
-	print("\nYou are in the Gym!");
-	print("\n");
-
-
-    	print("\nWhere do you want to go next? Say one of these choices:" +
-        	"\n\tlocationA");
-    
-    	function processInput(input){
-        	if (input.toLowerCase() === "locationa") {
-           	 locationA();
-    	    } else {
-    	        stayHere();
-    	        waitThenCall(locationB);
-    	    }
-    	}
-
-	waitForInput(processInput);
-}
-
 function explore() {
 	clear();
 	print("\nAs you continue to explore the deck, you see a manlike " +
@@ -237,74 +301,28 @@ function explore() {
 	waitForInput(processInput);
 }
 
-function wheel() {
-	clear();
-	print("\nYou are in at the helm of the boat!");
-	print("\nOhhhh look its the ships wheel....");
-	
-	print("Would you like to go try and steer the ship???? Or go back?" + 
-		"\n\tExplore the deck again?" + 
-		"\n\tSteer the wheel (Type: Steer)");
-
-    	function processInput(input){
-        	if (input.toLowerCase() === "explore") {
-			explore();
-		} else if (input.toLowerCase() === "steer") {
-			print("The steering wheel calls to you like a beacon " +
-			"in the night. It's decided, you must steer the ship. " +
-			"Taking hold of the wheel, you find steering much easier " +
-			"than you once thought. 30 seconds in and all is going " +
-			"smoothly---is that an iceberg??? The ship crashes, " +
-			"and you are killed in the collision.");
-			print("\nEnding: Titanic\nWould you like to restart?" +
-			" Type: Yes or No");
-			
-			function processInput(input){
-        			if (input.toLowerCase() === "yes") {
-					clear();
-					gameOver();
-				} else if (input.toLowerCase() === "no") {
-					print("You sure??");
-				} else {
-					stayHere();
-				}
-			} 
-			waitForInput(processInput);
-    		} else {
-		stayHere();
-		}
-	}
-	//waitForInput(processInput);
-}
-
-function start(){
-	let myTitle = `
- _    _  ___   _   _ _____ ___________                                    
-| |  | |/ _ \\ | \\ | |_   _|  ___|  _  \\                                   
-| |  | / /_\\ \\|  \\| | | | | |__ | | | |                                   
-| |/\\| |  _  || . \` | | | |  __|| | | |                                   
-\\  /\\  / | | || |\\  | | | | |___| |/ /
- \\/  \\/\\_| |_/\\_| \\_/ \\_/ \\____/|___/
-                                                                          
-                                                                          
- _____ _   _  _____   _____ ___________  ___  _    _    _   _   ___ _____ 
-|_   _| | | ||  ___| /  ___|_   _| ___ \\/ _ \\| |  | |  | | | | / _ \\_   _|
-  | | | |_| || |__   \\ \`--.  | | | |_/ / /_\\ \\ |  | |  | |_| |/ /_\\ \\| |
-  | | |  _  ||  __|   \`--. \\ | | |    /|  _  | |/\\| |  |  _  ||  _  || |  
-  | | | | | || |___  /\\__/ / | | | |\\ \\| | | \\  /\\  /  | | | || | | || |
-  \\_/ \\_| |_/\\____/  \\____/  \\_/ \\_| \\_\\_| |_/\\/  \\/   \\_| |_/\\_| |_/\\_/  
-	`;
-
-	printAscii(myTitle, "#a32222");
-	print("\n\n\n");
-	let start = " Start "
-	print("Type Start to continue!!");
-
+function deck() {
+    clear();
+    print("\nYou are on the deck! As you look up at the bright sky you see" + 
+    " 4 places that the hat could be!");
+    print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\tKitchen" + 
+    	"\n\tGym" +
+    	"\n\tContinue exploring Deck (Type: Explore)" +
+    	"\n\tCabin (dont go here)");
+    
     function processInput(input){
-        if (input.toLowerCase() === "start") {
-            context();
-        } else {
-            stayHere();
+        if (input.toLowerCase() === "kitchen") {
+		kitchen();
+        } else if (input.toLowerCase() == "gym") {
+		gym();
+	} else if (input.toLowerCase() == "explore") {
+		explore();
+	} else if (input.toLowerCase() == "cabin") {
+		context();
+	} else {
+		stayHere();
+		waitThenCall(deck);
         }
     }
     waitForInput(processInput);
@@ -355,4 +373,37 @@ function context(){
 	}
     
 	waitForInput(processInput);
+}
+
+function start(){
+	let myTitle = `
+ _    _  ___   _   _ _____ ___________                                    
+| |  | |/ _ \\ | \\ | |_   _|  ___|  _  \\                                   
+| |  | / /_\\ \\|  \\| | | | | |__ | | | |                                   
+| |/\\| |  _  || . \` | | | |  __|| | | |                                   
+\\  /\\  / | | || |\\  | | | | |___| |/ /
+ \\/  \\/\\_| |_/\\_| \\_/ \\_/ \\____/|___/
+                                                                          
+                                                                          
+ _____ _   _  _____   _____ ___________  ___  _    _    _   _   ___ _____ 
+|_   _| | | ||  ___| /  ___|_   _| ___ \\/ _ \\| |  | |  | | | | / _ \\_   _|
+  | | | |_| || |__   \\ \`--.  | | | |_/ / /_\\ \\ |  | |  | |_| |/ /_\\ \\| |
+  | | |  _  ||  __|   \`--. \\ | | |    /|  _  | |/\\| |  |  _  ||  _  || |  
+  | | | | | || |___  /\\__/ / | | | |\\ \\| | | \\  /\\  /  | | | || | | || |
+  \\_/ \\_| |_/\\____/  \\____/  \\_/ \\_| \\_\\_| |_/\\/  \\/   \\_| |_/\\_| |_/\\_/  
+	`;
+
+	printAscii(myTitle, "#a32222");
+	print("\n\n\n");
+	let start = " Start "
+	print("Type Start to continue!!");
+
+    function processInput(input){
+        if (input.toLowerCase() === "start") {
+            context();
+        } else {
+            stayHere();
+        }
+    }
+    waitForInput(processInput);
 }
