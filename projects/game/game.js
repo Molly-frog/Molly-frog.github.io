@@ -139,12 +139,8 @@ let copper = `
 /////////// HELPER FUNCTION //////////
 
 function gameOver(){
-	gameActive = false;
-	
-	if (gameActive === false){
 		clear();
 		start();
-	}
 }
 
 //////// LOCATIONS ///////////////
