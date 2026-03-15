@@ -83,7 +83,7 @@ function gym() {
 					"your head (Nvm). Your vision fades " +
 					"to black as you feel yourself falling " +
 					"to the ground.");
-					print("\nEnding: Nailed it \nWould you" + 
+					print("\nEnding: Crushed it \nWould you" + 
 					" like to restart? Yes or No?");
 
 					function processInput(input) {
@@ -396,7 +396,7 @@ function context(){
 
 		print("Type Deck to start your journey");
 	} else{
-		print("idk if this works yayayaayyay");
+		print("I am in fact not done ");
 	}
 	function processInput(input){
 		if (input.toLowerCase() === "deck") {
