@@ -6,13 +6,10 @@ let hasHat = false;
 /////////// HELPER FUNCTION //////////
 
 function gameOver(){
-	gameActive = false;
+//	gameActive = false;
 	if (gameActive == false){
 		clear();
 		start();
-	} else {
-		clear();
-		context();
 	}
 }
 
@@ -43,6 +40,7 @@ function gym() {
 				"\n\tGo to the bathroom (Type: Bathroom)" + 
 				"\n\tContinue to prove him wrong (Type: Continue)" + 
 				"\n\tBack to the Deck (Type: Deck)");
+			
 			function processInput(input){
 				if (input.toLowerCase() === "deck"){
 					clear();
@@ -57,25 +55,62 @@ function gym() {
 					print("\nThat’s kinda embarrassing but " +
 					"at least you found the hat… ig. Do " +
 					"you want to go back to the cabin and " +
-					"tell Luffy the great news?! Yes or No?");
+					"tell Luffy the great news?! Type: Luffy.");
+
+					function processInput(input) {
+						if (input.toLowerCase() === "luffy") {
+							hasHat = true;
+							clear();
+							context();
+						} else {
+							stayHere();
+						}
+					}
+					waitForInput(processInput);
+				} else if (input.toLowerCase() === "continue") {
+					print("\nYou pause, think about it and " +
+					"then say: Nah, I got this (You " +
+					"don’t)!!! Give me the heaviest " +
+					"dumbbell you got!");
+					print("\nZoro looks up at you and " +
+					"smirks, saying…Okay if you say so, " +
+					"as he pulls out a 5-Ton Hammer");
+					print("\nYou’re a little intimidated " +
+					"but still you swing it, lifting it " +
+					"up! (Omg you actually did it!)….and " +
+					"immediately under the pressure of " +
+					"its intense heaviness drop it on " +
+					"your head (Nvm). Your vision fades " +
+					"to black as you feel yourself falling " +
+					"to the ground.");
+					print("\nEnding: Nailed it \nWould you" + 
+					" like to restart? Yes or No?");
 
 					function processInput(input) {
 						if (input.toLowerCase() === "yes") {
-							p
+							gameActive = false;
+							gameOver();
+						} else if (input.toLowerCase() === "no") {
+							print("I dont know why" + 
+							" I keep making this" + 
+							" an option. Idk what " +
+							"your doing here...");
+						} else {
+							stayHere();
 						}
 					}
-				} else {
+					waitForInput(processInput);
+				}else {
 					stayHere();
 				}
 			}
 			waitForInput(processInput);
-
 		 
     	    } else if (input.toLowerCase() === "deck") {
 		    deck();
 	    } else {
     	        stayHere();
-    	        waitThenCall(locationB);
+    	        waitThenCall(gym);
     	    }
     	}
 	waitForInput(processInput);
