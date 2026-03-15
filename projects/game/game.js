@@ -2,18 +2,162 @@
 
 let gameActive = true;
 let hasHat = false;
+let myTitle = `
+ _    _  ___   _   _ _____ ___________                                    
+| |  | |/ _ \\ | \\ | |_   _|  ___|  _  \\                                   
+| |  | / /_\\ \\|  \\| | | | | |__ | | | |                                   
+| |/\\| |  _  || . \` | | | |  __|| | | |                                   
+\\  /\\  / | | || |\\  | | | | |___| |/ /
+ \\/  \\/\\_| |_/\\_| \\_/ \\_/ \\____/|___/
+                                                                          
+                                                                          
+ _____ _   _  _____   _____ ___________  ___  _    _    _   _   ___ _____ 
+|_   _| | | ||  ___| /  ___|_   _| ___ \\/ _ \\| |  | |  | | | | / _ \\_   _|
+  | | | |_| || |__   \\ \`--.  | | | |_/ / /_\\ \\ |  | |  | |_| |/ /_\\ \\| |
+  | | |  _  ||  __|   \`--. \\ | | |    /|  _  | |/\\| |  |  _  ||  _  || |  
+  | | | | | || |___  /\\__/ / | | | |\\ \\| | | \\  /\\  /  | | | || | | || |
+  \\_/ \\_| |_/\\____/  \\____/  \\_/ \\_| \\_\\_| |_/\\/  \\/   \\_| |_/\\_| |_/\\_/  
+	`;
+
+let theEnd = `
+_____ _            _____          _ 
+|_   _| |          |  ___|        | |
+  | | | |__   ___  | |__ _ __   __| |
+  | | | '_ \\ / _ \\ |  __| \'_ \\ / _\` |
+  | | | | | |  __/ | |__| | | | (_| |
+  \\_/ |_| |_|\\___| \\____/_| |_|\\__,_|
+  `;
+
+let luffy = `    ⠀⠀⠀
+   ⣠⠞⢠⠖⠉⠉⠉⢭⣭⣀⡉⣍⠉⠉⠒⠭⣑⠤⡀⠀⠀⠀⠀
+⠀⠀⡞⠁⡰⠳⢦⣼⣿⡿⣿⣿⣿⣿⣿⣿⣶⣤⡀⠈⠓⣌⢢⡀⠀⠀
+⠀⣸⠁⣰⣵⣾⣿⣿⡿⠹⣿⣿⢿⣟⣿⣿⣿⣿⣿⣦⡀⠈⢣⠱⡀⠀
+⠀⢯⢠⣿⠟⣿⣿⣿⡇⠀⣿⠛⣷⢙⣻⢌⣻⠟⣿⣿⣿⣆⠀⢧⢳⠀
+⠀⠘⡞⢡⣼⣿⣿⣯⣧⠀⠘⠆⢨⠋⢠⡤⢘⣆⢻⣿⣿⣿⠇⢸⠀⡇
+⠀⠀⢱⡼⢟⣿⣿⣿⠋⢑⣄⠀⠈⠢⠤⠔⣺⣏⠀⣿⣿⡏⠀⡼⠀⡇
+⠀⠀⠁⠘⢺⣿⣿⣿⣦⣈⣽⠀⠀⢀⡤⠊⢡⣾⠀⠸⣿⢃⡴⠁⡜⠁
+⠀⠀⠀⠀⠀⠻⠙⠟⣿⡀⢨⠭⠊⡡⠔⠀⢠⠃⡜⣿⡋⣁⡠⠊⠀⠀
+⠀⠀⠀⠀⡰⠉⢓⠀⠈⠳⢌⡳⢄⣀⠤⠒⢁⠞⡼⠙⡄⠀⠀⠀⠀⠀
+⠀⠀⣀⠤⣣⣄⢸⠀⠀⠀⠀⠉⠑⠒⠤⢲⣥⠼⣤⣤⣱⡀⠀⠀⠀⠀
+⣠⠊⠁⠀⠀⠈⣞⣆⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⠙⢿⣿⣧⡀⠀⠀
+⠄⠈⠉⠉⠙⢦⢻⠚⣄⠀⠀⠀⠀⣼⠃⠀⠀⠀⠀⠀⢸⣿⣿⣧⠀
+  `;
+
+let zoro = `    ⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⠖⣱⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⢿⣝⣤⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠴⠖⠖⠦⢤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢿⣏⣽⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠧⣔⣠⠶⢦⣤⣈⠻⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣴⠟⣶⣔⠲⡤⣀⠀⠀⠀⠀⢸⠇⣠⡎⠉⠀⠀⠈⠈⢎⣇⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣧⣼⠇⡄⢹⢳⡀⠀⠀⣸⡃⢰⣃⡀⠀⠀⣀⣰⡼⣻⢘⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡎⠀⠙⢿⣋⠴⣋⡼⠉⣆⣤⣿⣆⣄⠰⠿⠟⠁⡀⠚⠋⢨⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠞⠀⣄⣀⠉⠙⢿⣼⣧⣾⣥⡞⢯⢿⣿⡀⠀⢀⣀⠡⣤⣤⣼⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠖⡲⠃⢀⣰⡟⠛⠛⠛⠻⠟⢷⣿⠛⣷⡂⠀⠉⢷⣟⠛⠀⠀⠉⢁⣿⠭⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡰⠁⠈⠣⣤⣿⠛⢠⠀⠀⠀⣯⣴⣏⣹⣶⣿⣿⣦⣀⡘⠙⠷⣦⣤⡴⢿⢹⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡠⢇⠀⠀⠀⠈⢱⣶⡾⠁⠀⠀⢈⣋⣉⣀⣈⢻⠿⡿⢻⡇⠀⢧⠀⠀⠀⢸⠀⣿⡌⢢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⡴⠋⠀⠈⢷⣤⣀⣠⣿⡿⠁⣀⡠⠖⠙⡄⠀⠀⠀⠀⣰⠇⢸⣗⠒⠬⢷⣄⢀⡼⠤⠼⢧⠀⢿⡙⠦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠊⠀⠀⠀⠀⠈⠙⢻⡿⠛⠋⠉⠉⠀⠀⠀⢹⠀⠀⠀⢀⣿⠀⢸⣿⡀⠀⠀⠻⡟⠀⠀⠀⢸⠀⢸⣧⠀⠀⠉⠐⡢⡀⠀⠀⠀⠀⠀⠀
+⠀⡀⠀⠀⠀⠀⠀⣠⣾⡁⠀⠠⣄⠈⢦⡀⠀⠀⡆⠀⠀⢸⡿⡇⠘⣿⡇⠀⠀⠀⡃⠀⠀⡴⢻⠀⢸⣿⡆⠀⠀⡜⠀⠸⡀⠀⠀⠀⠀⠀
+⡴⠀⠀⠀⠀⣠⣾⣿⣿⣇⠀⠘⣾⣷⣦⣿⣦⠀⢱⠀⠀⠈⠀⠀⠀⣿⡇⠀⠀⢀⣇⡴⠋⠀⠘⡀⠸⡟⣷⠀⡸⠀⠀⠀⢃⠀⠀⠀⠀⠀
+⠳⡀⣀⣤⣾⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣾⠀⢀⠀⠀⠀⠀⣿⠧⠒⢒⣻⡏⠉⠉⠉⠘⡇⢀⡇⠘⢶⡇⠀⠀⠀⠸⡀⠀⠀⠀⠀
+⠀⠈⠛⠛⢛⣿⡟⣿⠛⠛⠛⠛⠛⠛⠿⡟⠛⣿⣿⣠⡎⠀⢸⠀⠀⣿⠀⣠⠞⢰⡇⠀⠀⠀⠀⡇⠐⡇⠀⠈⣧⣀⣴⣦⡀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣥⡿⠇⠱⡄⠀⠀⠀⠀⠀⢿⣾⣿⣿⣿⠁⠀⢸⠀⠀⠟⣿⠉⠉⣿⠉⠉⣿⡏⣿⡇⠠⡇⠀⠀⣿⣻⣿⣯⢛⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⢿⢆⠀⠈⢦⠀⠀⠀⠀⠸⣿⣿⣿⡏⠀⠀⡞⠀⢠⠀⡆⠀⠀⣿⠀⠀⢻⡇⢻⣇⠀⣇⠀⢰⣿⣿⣿⣿⣟⣿⣿⣝⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢷⡄⠀⠷⡄⠀⠀⠀⣿⡿⢿⠃⠀⠀⡇⠀⣼⣿⡇⠀⠀⣿⠀⠀⢸⡇⢸⣏⡇⠈⡆⢸⣿⠩⠟⠛⠻⣿⣿⠿⣿⣷
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⡷⡘⢉⢦⡀⠀⢸⣤⣼⡄⠀⠀⢇⠀⠹⣿⣇⠀⠀⣿⣀⠀⢸⡇⢸⠟⠁⡴⠃⠀⣿⡆⠀⠀⢠⡘⣿⣷⡽⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢌⢦⡐⣹⡟⣿⣿⣿⣷⣦⡀⠈⢦⠀⠈⢻⣧⡀⣿⠈⠙⢻⡿⠃⣠⠊⢀⣀⣀⣿⣿⢰⠀⠀⢷⡼⠻⣧⠣
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣳⣙⡿⢣⣿⣿⣿⣿⣽⣿⣆⠀⠳⣄⠀⠹⣿⣿⠒⡶⠋⠀⣴⣷⣿⣿⣿⣿⣿⠇⢸⠀⠀⠈⢇⠀⠈⠻
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣷⠟⢻⣎⣾⡟⣩⣽⡿⣶⣤⡈⢢⡀⠘⢧⡖⠁⣀⣼⣿⠿⣿⣟⠛⢻⣏⠀⢸⠀⠀⠀⠘⢆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠿⠗⠛⠿⠿⠡⠟⠉⠒⠚⠛⠛⠛⠓⠂⠈⠛⠛⠛⠛⠛⠊⡀⠈⣆⠀⡍⠓⡎⠀⠀⠀⠀⠈⢆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡦⢄⡉⠑⠒⠒⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⢀⡨⠗⠚⡉⠳⠀⠘⡄⠂⠀⡇⠀⢠⡾⠻⣷⣼⠀
+  
+`;
+
+
+let sanji = `    ⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠈⠙⠒⠲⣤⡀⠐⢤⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⢴⣻⣷⡦⠤⠀⠀⣈⣉⡲⣤⡀⠀⠀⠀⠀⠀⠀⠙⢦⠈⢷⡀⠀⠀
+⠀⠀⢀⢾⣿⠯⣤⣀⡉⠉⠙⠻⠶⣤⣉⠳⢿⣦⣀⠀⠀⠀⠀⠀⠈⣧⠀⢣⠀⠀
+⠀⢠⡟⠛⣀⣀⣀⡈⠙⠛⠻⠶⠤⣄⡈⠓⠦⠙⢯⠁⠀⠀⠀⠀⠀⠻⠀⣼⡄⠀
+⣰⣿⡆⢠⡏⠀⠉⠉⠒⠦⢄⣀⢀⡈⠻⣄⡀⣷⣿⣇⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
+⣿⡇⢥⠈⢧⡀⠑⢶⡆⠀⠀⠉⠓⢿⡶⣽⡙⢷⠸⣼⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢻⢧⠘⣆⠈⢿⣄⣠⢷⡄⢀⣿⡅⠀⠈⠓⣇⠈⣀⣼⢷⡆⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⣯⢧⠘⢧⠛⢿⣿⣟⣣⣿⢯⣤⡇⠀⠀⢠⣾⠟⢹⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⢧⡳⣌⠷⣄⣙⢿⣦⡇⠠⠞⠀⠀⢰⡷⠃⢠⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠓⠮⣧⣍⠻⣧⣭⣿⣧⣄⣀⣀⣾⣦⡖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠉⠓⠻⣿⣛⣽⣿⠿⢿⡏⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣼⣻⡄⠀⠀⠈⣿⣛⣿⣷⣦⣤⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣧⠀⠀⠀⢸⡧⣽⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣯⣿⣻⣄⠀⢀⢏⣙⡾⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀
+⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣳⣿⡜⠿⣤⣟⣿⣿⣷⣝⣿⣿⣿⣿⣿⣿⡆⠀⠀
+⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⢿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀
+⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡎⣾⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⡆⠀
+⠀⠀⠀⢠⣿⣿⣿⣿⣿⠟⠙⣻⣿⣿⣿⣧⣿⣿⣿⣿⣇⣀⣼⣟⡡⠤⢽⣿⣿⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣷⣶⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣥⣶⡲⣄⣹⣿⡇
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⠟⣟⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⣹⣬⣿⣿⡇
+⠀⠀⠀⣾⣿⣿⣿⣿⣇⣠⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣽⣿⡇
+⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⠃
+⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣿⣿⡿⠿⠿⠋⠀
+⠀⠀⠀⠀⠈⠙⠛⠻⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡏⠉⢻⣿⣿⣿⣿⣿⣿⣿⠉⢙⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣷⣴⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+`;
+
+let copper = `
+⣿⣹⣟⣻⣟⣻⣟⣻⢯⣟⣻⣻⣽⣛⣟⣻⣛⣟⣻⣛⡿⢯⡿⣽⢫⣟⡽⣫⡽⣏⠿⣭⡻⣭⣛⣭⢯⡝⣭⢏⡽⣭⢫⡝⣭⢫⣝⣣⢯⡹
+⣾⡽⣞⣷⢯⣷⣿⣿⣟⣾⣳⣟⡾⣽⣞⡷⢯⣟⣷⣻⠽⠋⢉⠠⢁⠀⣀⠀⡀⢈⠉⠑⠛⠧⢿⡜⣧⣛⢮⡻⣜⢧⡻⣜⢧⣛⢦⡳⣎⠷
+⣷⣻⣟⣾⢿⣿⣿⡿⢋⠠⠁⢿⣽⣳⢾⡽⣟⡾⠃⢀⠄⡊⠔⣈⠢⢁⠆⡑⡈⠆⡘⠰⣀⢂⠀⠉⠓⢽⡳⣝⣮⢳⣝⢮⡳⣝⢮⡳⣝⠾
+⣿⣽⣯⣿⢯⣿⡻⠐⡌⠀⣰⣿⣳⡏⠡⢌⢻⡄⢄⠃⡌⠰⣡⣤⣌⢂⠒⡄⡑⢨⠐⡡⠄⢊⠌⡂⠌⢀⠙⢽⢎⡿⣜⡧⣟⢮⣗⡻⣼⢻
+⣿⣿⣿⣿⣿⣿⢃⠱⠀⢰⣿⣳⣿⠀⠃⠈⣈⠱⢈⠒⡈⣾⣿⣿⣿⣷⡁⢒⡈⠔⣈⣐⣬⣦⣌⡐⡉⢄⠠⠀⠻⡽⣞⣵⡻⣞⡼⣝⢾⣹
+⣿⣿⣿⣷⣿⡏⢄⠣⠀⠾⣿⣿⠇⠀⠀⡐⢄⠊⡄⠣⡐⡹⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⣿⡔⢨⠐⣂⠡⢀⠈⢻⡼⢯⡝⢾⡙⠎⠃
+⣿⣻⣽⣷⣿⡇⢌⠂⠀⡀⠸⠛⠀⠀⠂⢈⠀⠃⠐⠁⢂⣥⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢛⠃⠆⡡⢐⠢⢀⠂⠄⠉⠀⠀⡀⠀⡀⠂
+⣿⣽⣟⣾⡿⡇⠌⠄⡄⠄⢂⠰⢈⠡⣉⠂⡱⢈⠒⢌⠠⣀⠈⡙⠚⢯⣟⣿⣿⡏⢩⠐⠤⠑⡨⠌⢂⠅⠢⡁⠆⠐⡈⠀⠀⢀⠀⠄⠀⠄
+⣞⣳⢯⡿⠍⡐⠌⢒⠨⢐⢀⠃⡌⠒⡠⠑⣀⠣⠌⠂⠥⡐⠌⡰⢁⠢⣾⣿⡟⠾⡀⠣⠘⡄⢡⠘⠄⣊⠡⡐⡉⠄⠠⢁⠀⡀⣀⠀⠄⠀
+⢎⣳⢋⡇⠰⠁⡌⢂⠔⠡⣈⠒⢠⠃⡰⢁⠢⡐⠌⡑⢂⠌⡐⠁⢆⠡⠻⢿⠃⠆⡁⠠⠁⡀⠃⡌⢒⠠⢂⠅⡘⠄⡁⠂⠀⠛⠗⡀⠀⠂
+⢎⢲⠩⢠⠡⡘⢠⠊⢄⠃⡄⢊⠔⢂⠡⢂⣅⣢⣑⣈⠆⡘⠤⢉⠤⠘⡐⢂⠩⡐⠡⢆⠁⡐⠠⢀⠊⢄⠃⡌⠰⠈⢀⠡⠀⠀⠀⢀⠄⣊
+⣊⠦⣙⠠⠒⡠⠁⡌⢢⠘⣀⠣⣨⣴⣿⣻⠿⢟⠫⣼⣿⡟⣶⣬⣂⠱⢈⠄⣂⠡⡑⡈⠆⡐⠠⠀⠄⠈⢂⠠⠁⡐⢀⠂⠀⠀⡔⠃⠈⠀
+⡜⣢⢃⠳⡈⠔⢡⠐⠂⠅⠂⢱⡟⠉⠽⠙⣍⣫⣿⣿⣿⠳⡸⢿⣿⣷⣮⡐⢠⠡⢄⠂⠱⢠⠡⡈⠄⡁⠄⠐⠠⠐⡀⠂⠀⢀⠀⢀⠂⠁
+⣞⡥⢫⣱⣭⣦⣂⠡⠃⢈⣴⣿⣿⣿⣿⠁⡉⠁⢀⠹⢿⣆⢟⠷⡶⣿⣿⣿⣄⠂⠌⡌⡑⠄⠒⢄⠂⠄⠂⡁⠂⠁⠀⠀⢀⡂⠀⠀⠀⠀
+⣿⣾⣯⣿⣿⣿⣯⠱⢴⣿⣿⣿⣿⣿⣯⢤⣤⣥⣷⣶⣿⣷⢵⡐⠪⠙⣹⣿⣿⡆⠀⡐⠌⡰⢁⠄⢩⠐⡠⠐⢈⠀⠀⣼⣿⣿⠄⠀⠁⠀
+⣿⣿⣿⣿⣟⣧⣗⡃⣿⣩⣶⣷⣮⣟⡏⠿⡦⠿⣿⣿⡿⣿⣿⣷⣞⣧⡼⣿⣯⣿⡀⠠⢀⠱⠈⡌⢄⠢⢁⡐⠠⠈⠄⠛⠛⠋⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣾⣽⣻⣜⢾⠛⠿⢿⣿⣿⣿⣿⣿⣷⣝⢿⣸⣿⣿⢿⣞⣧⣿⣿⡿⢁⠂⠄⡀⠣⢌⠢⠄⢃⡐⠀⡁⠂⠄⠀⡔⡀⠠⠀⡀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠈⠉⠛⠻⢿⣿⣷⣧⣿⣿⣿⣧⢧⣿⡿⠁⠤⢈⠠⠐⢀⠂⡡⢊⠔⡀⢃⠠⢁⠈⡀⠀⢁⠠⠐⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡆⠀⡠⢀⠰⠀⠆⡐⠠⢈⠉⠛⣿⣿⣾⣿⣺⠻⠁⠌⡐⠠⠐⢈⠠⠀⡁⢆⡘⠤⢁⠂⠄⢂⠐⠀⠠⢀⠤⠠
+⣿⣿⣿⣿⣿⣿⡿⣿⣟⡫⢇⠞⡐⣦⣦⣅⠒⣈⡐⠂⢌⢨⣿⣿⣿⣿⣿⣿⣿⣿⣦⣠⡁⠠⢀⠐⡀⠄⠰⢈⠢⢈⠀⢂⠈⠀⠈⠈⠀⠀
+⣿⣿⣿⣿⣿⣏⠺⢏⣾⢗⣾⠡⢃⡻⣿⣿⣿⣦⣜⡉⢆⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣠⣂⣄⢂⠐⠠⠑⣂⠈⠄⡈⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣶⣿⣿⣟⣿⣦⣑⠬⢘⡙⡟⡻⢟⠓⣨⣸⣿⢿⣿⣾⣿⣿⣿⣿⡿⠿⠿⡿⢿⣿⣿⣿⣿⣷⡊⠀⠄⠂⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⡺⣟⡿⣿⣶⣦⣤⣥⣴⡾⣵⠟⣁⣿⡿⣿⣿⣿⣿⣿⣷⣦⣤⠄⠀⠀⠈⠉⠉⠻⣿⣶⡆⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⣿⣮⣻⡷⣯⡿⢿⣭⡿⣎⣶⣿⣿⣿⣿⢿⠿⠃⡙⠿⣏⠙⠓⠂⠀⠀⠀⠀⠀⠀⠙⣿⡷⠦⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⡿⣿⣿⣏⣼⣿⣿⠀⠰⢠⣜⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣿⣿⢿⣿⣻⣿⣟⣿⣏⣻⣿⣟⣧⣿⣷⣿⡿⢀⠡⣾⣿⣎⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⡿⣟⣿⣷⡿⣟⣿⣿⡿⣿⡿⣿⣻⣿⠃⠄⣲⣿⣿⣯⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⠈⢻⣾⣿⣿⣿⣽⣿⣿⢿⣷⣿⡿⣟⣿⣿⠇⠈⢰⣿⣿⣿⠃⢀⣼⠇⠀⢀⣀⡀⢀⡀⣄⣶⣹⢳⡳⣞⢖⡧⢳
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣦⠙⠿⣯⣿⣿⣾⣿⣿⣯⣿⣟⣿⡯⠃⠀⢠⣿⣿⡿⠁⠀⠸⡏⢀⣾⣿⣿⣿⣿⣿⣿⣾⣭⣷⣻⣜⡯⣞⣭
+`;
 
 /////////// HELPER FUNCTION //////////
 
 function gameOver(){
-//	gameActive = false;
-	if (gameActive == false){
+	gameActive = false;
+	
+	if (gameActive === false){
 		clear();
 		start();
 	}
 }
 
 //////// LOCATIONS ///////////////
+function credits() {
+	print("\nALRIGHTY TIME FOR THE CREDITS YAYAYAYYAYYAYYA");
+	print("\n\t\tDirected and Written By: The One and Only Molly Horner" +
+		"\n\t\tScript Writer: Evelyn Rich" + 
+		"\n\t\tEmotional Support: Julia Spieggle (I love you but I " +
+		"forgot how to spell your last name)...and one could say my Dad" + 
+		"\n\t\tTesters: Evelyn and Julia" + 
+		"\n\t\tArch Nemesis: Luka (Im better than him)");
+}
+
 
 function gym() {
 	clear();
@@ -72,6 +216,7 @@ function gym() {
 					"then say: Nah, I got this (You " +
 					"don’t)!!! Give me the heaviest " +
 					"dumbbell you got!");
+					printAscii(zoro, "#a32222");
 					print("\nZoro looks up at you and " +
 					"smirks, saying…Okay if you say so, " +
 					"as he pulls out a 5-Ton Hammer");
@@ -88,7 +233,6 @@ function gym() {
 
 					function processInput(input) {
 						if (input.toLowerCase() === "yes") {
-							gameActive = false;
 							gameOver();
 						} else if (input.toLowerCase() === "no") {
 							print("I dont know why" + 
@@ -133,7 +277,7 @@ function namiRoom() {
     	function processInput(input){
         	if (input.toLowerCase() === "yes") {
 			gameOver();
-		} else if (input.toLowerCase() == "no") {
+		} else if (input.toLowerCase() === "no") {
 			print("Okay well drowning is no fun so just go back");
 		}
     	}
@@ -186,6 +330,7 @@ function kitchen() {
 	print("\nIt smells like Sanji is cooking something yummy! He turns" + 
 		" to greet you as you approach, the savory smell of fresh " + 
 		"reindeer filling the air as you meet his gaze."); 
+	printAscii(sanji, "#a32222");
 
 	if (hasHat == false){
 		print("\nWasting no time, you ask if he has seen Luffy's " + 
@@ -208,7 +353,7 @@ function kitchen() {
     		function processInput(input){
         		if (input.toLowerCase() === "deck") {
            	 		deck();
-    	   	 	} else if (input.toLowerCase() == "nami's room"){
+    	   	 	} else if (input.toLowerCase() === "nami's room"){
     	        		namiRoom();
 			} else{
 				stayHere();
@@ -256,6 +401,7 @@ function talk() {
 				} else {
 					print("There was only option why are " +
 						"you still here????");
+					printAscii(copper,"#01579b");
 				}
 			} 
 			waitForInput(processInput);
@@ -349,11 +495,11 @@ function deck() {
     function processInput(input){
         if (input.toLowerCase() === "kitchen") {
 		kitchen();
-        } else if (input.toLowerCase() == "gym") {
+        } else if (input.toLowerCase() === "gym") {
 		gym();
-	} else if (input.toLowerCase() == "explore") {
+	} else if (input.toLowerCase() === "explore") {
 		explore();
-	} else if (input.toLowerCase() == "cabin") {
+	} else if (input.toLowerCase() === "cabin") {
 		context();
 	} else {
 		stayHere();
@@ -365,38 +511,40 @@ function deck() {
 
 function context(){
 	clear();
-
-	if (hasHat == false){
-		print("\n");
-		print("You are a fisherman, one day, while sitting on your" + 
+	if (hasHat === true){
+		print("\nWhen you find Luffy, your cheeks flush so deeply " +
+		"with embarrassment that you could be mistaken for a tomato. " +
+		"Some of the crew members laugh as you nervously hand over " +
+		"the hat. As punishment, Luffy forces you to wear a bucket " +
+		"on your head for the next hour. Ultimately you find the " +
+		"situation amusing and are warmly accepted as part of the crew.");
+		printAscii(luffy, "#01579b");
+		print("\nCONGRATULATIONS YOU ACTUALLY WIN!!!");
+		print("Ending: Captain crook");
+		printAscii(theEnd, "#a32222");
+		credits();
+	} else{
+		print("\nYou are a fisherman, one day, while sitting on your" + 
 		"tiny boat getting ready to go back to you tiny island," + 
 		" a biggg storm hits your waters. You try to stay afloat" + 
 		" but ... OHH NOOO... the storm is bigger than you had " + 
 		"expected and you go over board...");
-		
-		print("\n");
 
-		print("You wake up in a daze. It appears that you have " + 
+		print("\nYou wake up in a daze. It appears that you have " + 
 		"woken up on the Thousand Sunny, the ship of the infamous " + 
 		"Straw Hat Pirates. After waking up in the ship's cabin, you " +
 		"informally meet Captain Monkey D. Luffy, who is sleeping, " + 
 		"but it appears that he is trying to say something......?");
 
-		print("\n");
-
-		print("heEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
+		print("\nheEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
 		"tryin’ to STArttt a fighttt…. SNOOORRRREEEEE");
 
-		print("\n");
-
-		print("GASP…..he saved your life, but he’s lost his most " + 
+		print("\nGASP…..he saved your life, but he’s lost his most " + 
 		"precious treasure: his Straw Hat. To repay " + 
 		"his kindness, you decide to search the ship and find his " + 
 		"missing hat!!");
 
-		print("Type Deck to start your journey");
-	} else{
-		print("I am in fact not done ");
+		print("\nType Deck to start your journey");
 	}
 	function processInput(input){
 		if (input.toLowerCase() === "deck") {
@@ -411,22 +559,6 @@ function context(){
 }
 
 function start(){
-	let myTitle = `
- _    _  ___   _   _ _____ ___________                                    
-| |  | |/ _ \\ | \\ | |_   _|  ___|  _  \\                                   
-| |  | / /_\\ \\|  \\| | | | | |__ | | | |                                   
-| |/\\| |  _  || . \` | | | |  __|| | | |                                   
-\\  /\\  / | | || |\\  | | | | |___| |/ /
- \\/  \\/\\_| |_/\\_| \\_/ \\_/ \\____/|___/
-                                                                          
-                                                                          
- _____ _   _  _____   _____ ___________  ___  _    _    _   _   ___ _____ 
-|_   _| | | ||  ___| /  ___|_   _| ___ \\/ _ \\| |  | |  | | | | / _ \\_   _|
-  | | | |_| || |__   \\ \`--.  | | | |_/ / /_\\ \\ |  | |  | |_| |/ /_\\ \\| |
-  | | |  _  ||  __|   \`--. \\ | | |    /|  _  | |/\\| |  |  _  ||  _  || |  
-  | | | | | || |___  /\\__/ / | | | |\\ \\| | | \\  /\\  /  | | | || | | || |
-  \\_/ \\_| |_/\\____/  \\____/  \\_/ \\_| \\_\\_| |_/\\/  \\/   \\_| |_/\\_| |_/\\_/  
-	`;
 
 	printAscii(myTitle, "#a32222");
 	print("\n\n\n");
