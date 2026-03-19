@@ -507,6 +507,11 @@ function deck() {
 
 function context(){
 	clear();
+
+	let index = 0;
+	let count = 0;
+	let lines = [];
+
 	if (hasHat === true){
 		print("\nWhen you find Luffy, your cheeks flush so deeply " +
 		"with embarrassment that you could be mistaken for a tomato. " +
@@ -526,29 +531,53 @@ function context(){
 		" but ... OHH NOOO... the storm is bigger than you had " + 
 		"expected and you go over board...");
 
-		print("\nYou wake up in a daze. It appears that you have " + 
+		//print("\nYou wake up in a daze. It appears that you have " + 
+		//"woken up on the Thousand Sunny, the ship of the infamous " + 
+		//"Straw Hat Pirates. After waking up in the ship's cabin, you " +
+		//"informally meet Captain Monkey D. Luffy, who is sleeping, " + 
+		//"but it appears that he is trying to say something......?");
+
+		//print("\nheEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
+		//"tryin’ to STArttt a fighttt…. SNOOORRRREEEEE");
+
+		//print("\nGASP…..he saved your life, but he’s lost his most " + 
+		//"precious treasure: his Straw Hat. To repay " + 
+		//"his kindness, you decide to search the ship and find his " + 
+		//"missing hat!!");
+
+		//print("\nType Deck to start your journey");
+
+		lines = [	
+		"\nYou wake up in a daze. It appears that you have " + 
 		"woken up on the Thousand Sunny, the ship of the infamous " + 
 		"Straw Hat Pirates. After waking up in the ship's cabin, you " +
 		"informally meet Captain Monkey D. Luffy, who is sleeping, " + 
-		"but it appears that he is trying to say something......?");
+		"but it appears that he is trying to say something......?",
 
-		print("\nheEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
-		"tryin’ to STArttt a fighttt…. SNOOORRRREEEEE");
+		"\nheEyyy youuuuUuuu! Give MEEee bAAck my Hat! Are YOU " + 
+		"tryin’ to STArttt a fighttt…. SNOOORRRREEEEE",
 
-		print("\nGASP…..he saved your life, but he’s lost his most " + 
+		"\nGASP…..he saved your life, but he’s lost his most " + 
 		"precious treasure: his Straw Hat. To repay " + 
 		"his kindness, you decide to search the ship and find his " + 
-		"missing hat!!");
+		"missing hat!!",
 
-		print("\nType Deck to start your journey");
+		"\nType Deck to start your journey"
+		];
+		count = lines.length;
 	}
 	function processInput(input){
-		if (input.toLowerCase() === "deck") {
-			deck()
+		if (count > 0 && index < count - 1) {
+			index = index + 1;
+			print(lines[index]);
 		} else {
-			stayHere();
-		        waitThenCall(context);
-        	}
+			if (input.toLowerCase() === "deck") {
+				deck()
+			} else {
+				stayHere();
+			}
+		}
+
 	}
     
 	waitForInput(processInput);
