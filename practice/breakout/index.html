@@ -1,22 +1,21 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Lady Gaga</title>
+    <title>Gamedev Canvas Workshop</title>
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
       canvas {
-	      border: black, 1px, solid;
+        display: block;
+        margin: 0 auto;
       }
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="800" height="800"></canvas>
-
-    <script>
-	    const canvas = document.getElementById("myCanvas");
-	    const ctx = canvas.getContext("2d");
-
-
-    </script>
+	  <canvas id="myCanvas" width="480" height="320" style="border:1px solid black;"></canvas>
+	  <script src="game.js"></script>
+	  <button id="runButton">Start game</button>
   </body>
 </html>
