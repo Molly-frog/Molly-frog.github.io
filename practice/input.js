@@ -74,7 +74,7 @@ function clickHandler(e) {
 
    let leftPosButton =   startButton.center.x;
    let rightPosButton =  startButton.center.x + startButton.width;
-   let topPosButton =  startButton.center.y - startButton.height;
+   let topPosButton =  startButton.center.y;
    let bottomPosButton = startButton.center.y + startButton.height;
 
     // console.log(leftPosBackground, rightPosBackground, '---', topPosBackground, bottomPosBackground)
