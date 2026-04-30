@@ -1,16 +1,32 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-    bluePlanetHow2Play = [
-        "Oh No! Looks like the page is at",
-        "the bottom of the ocean!!",
-        "You need to go swim down there",
-        "and get it...make sure to dodge",
-        " the fishing rods!",
-        " Or else you will get caught"
-    ]
+bluePlanetHow2Play = [
+    "Oh No! Looks like the page is at",
+    "the bottom of the ocean!!",
+    "You need to go swim down there",
+    "and get it...make sure to dodge",
+    " the fishing rods!",
+    " Or else you will get caught"
+]
     
-    let starData = [];
+let startBackground = {
+	center: {x: 700, y: 200},
+	width: 400,
+	height: 400,
+    color: "#5dacbd"
+}
+
+let startButton = {
+	center: {x: 780, y: 500},
+	height: 60,
+	width: 255,
+    color: "#e0ebeb"
+}
+    
+let startData = [];
+let textIsScrolling = false;
+let speed = -5;
 
 function drawRect(x, y, w, h, color) {
     ctx.fillStyle = color;
@@ -31,36 +47,47 @@ function write(x, y, text, size, color='white', align='left', font=mainFont) {
     ctx.fillText(text, x, y);
 }
 
-
-
 function drawBackground(color) {
     drawRect(0, 0, canvas.width, canvas.height, color);
 }
 
-function bubbles(){
-    for (let i = 0; i < 100; i++) {
-        starData.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * (canvas.height + 200),
-            size: 1 + 2 * Math.random(),
-        });
-    }
-}
-
-
 function how2Play(){
-    drawRect(700, 200, 400, 400, "#5dacbd");
-    write(785, 250, "How To Play", 40, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 290, bluePlanetHow2Play[0], 20, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 330, bluePlanetHow2Play[1], 20, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 370, bluePlanetHow2Play[2], 20, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 410, bluePlanetHow2Play[3], 20, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 450, bluePlanetHow2Play[4], 20, color='#e0ebeb', align='left', font = "mainFont");
-    write(785, 490, bluePlanetHow2Play[5], 20, color='#e0ebeb', align='left', font = "mainFont");
+    let y = startBackground.center.y + 40;
+    let x = 785;
 
-    drawRect(780, 500, 255, 60, "e0ebeb");
-    write(860, 545, "Start", 40, color="#5dacbd", align='left', font = "mainFont");
+    drawRect(startBackground.center.x, startBackground.center.y, startBackground.width, startBackground.height, startBackground.color);
+   
+    write(x, y, "How To Play", 40, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 40, bluePlanetHow2Play[0], 20, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 80, bluePlanetHow2Play[1], 20, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 120, bluePlanetHow2Play[2], 20, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 160, bluePlanetHow2Play[3], 20, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 200, bluePlanetHow2Play[4], 20, color='#e0ebeb', 'left', font = "mainFont");
+    write(x, y + 240, bluePlanetHow2Play[5], 20, color='#e0ebeb', 'left', font = "mainFont");
+
+    drawRect(startButton.center.x, startButton.center.y, startButton.width, startButton.height, startButton.color);
+    write(860, y + 300, "Start", 40, color="#5dacbd", align='left', font = "mainFont");
 }
+
+function clickHandler(e) {
+    const mouseX = e.offsetX, mouseY = e.offsetY;
+
+   let leftPosButton =   startButton.center.x;
+   let rightPosButton =  startButton.center.x + startButton.width;
+   let topPosButton =  startButton.center.y - startButton.height;
+   let bottomPosButton = startButton.center.y + startButton.height;
+
+    // console.log(leftPosBackground, rightPosBackground, '---', topPosBackground, bottomPosBackground)
+    //console.log('mouse: ', mouseX, mouseY)
+
+    if (leftPosButton < mouseX && mouseX < rightPosButton
+        && topPosButton < mouseY && mouseY < bottomPosButton) {
+        textIsScrolling = true;
+    }
+};
+
+canvas.addEventListener('click', clickHandler);
+
 
 function drawBoats(){
     drawHalfCircle(200, 200, 100, "brown");
@@ -72,53 +99,18 @@ function drawBoats(){
     drawRect(800, 50, 100, 70, "black");
 }
 
-function drawCat() {
-    let x = player.x;
-    let y = player.y - 90;
+function mainLoop(){
+    drawBackground("#24527a");
+    drawRect(0, 0, 1200, 300, "white");
+    drawBoats();
+    how2Play();
 
-    // head
-    drawCircle(x, y-20, 35, "orange");
+    if (textIsScrolling === true){
+		startBackground.center.y = startBackground.center.y + speed;
+        startButton.center.y = startButton.center.y + speed;
+	}
 
-    // body
-    drawCircle(x, y+40, 50, "orange");
-
-    // ears
-    ctx.fillStyle = "orange";
-    ctx.beginPath();
-    ctx.moveTo(x-35, y-45 +20);
-    ctx.lineTo(x-20, y-75);
-    ctx.lineTo(x-10, y-45);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.moveTo(x+10, y-45);
-    ctx.lineTo(x+20, y-75);
-    ctx.lineTo(x+35, y-45 +20);
-    ctx.fill();
-
-    // eyes
-    drawCircle(x-15, y-20, 4, "black");
-    drawCircle(x+15, y-20, 4, "black");
-
-    // nose
-    // drawCircle(x, y-5, 3, "black");
-
-    // mouth
-    ctx.beginPath();
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 2;
-    ctx.moveTo(x-5, y-10);
-    ctx.lineTo(x,   y-15);
-    ctx.lineTo(x+5, y-10);
-    ctx.stroke();
-
-    // reference point
-    // drawRect(player.x-2, player.y-2, 4, 4, 'black');
+	requestAnimationFrame(mainLoop);
 }
 
-
-drawBackground("#24527a");
-drawRect(0, 0, 1200, 300, "white");
-drawBoats();
-how2Play();
-bubbles();
+mainLoop();
