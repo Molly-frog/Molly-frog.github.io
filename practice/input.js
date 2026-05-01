@@ -17,14 +17,28 @@ let startBackground = {
     color: "#5dacbd"
 }
 
+let boats = {
+    center: {x: 180, y: 50},
+    width: 30,
+    height: 220,
+    color: "brown",
+    flag: "black",
+    radius: 100 
+}
+
 let startButton = {
 	center: {x: 780, y: 500},
 	height: 60,
 	width: 255,
     color: "#e0ebeb"
 }
-    
-let startData = [];
+let sky = {
+    center: {x: 0, y:0},
+    width: 1200,
+    height: 300,
+    color: "#e0ebeb"
+}
+
 let textIsScrolling = false;
 let speed = -5;
 
@@ -90,24 +104,27 @@ canvas.addEventListener('click', clickHandler);
 
 
 function drawBoats(){
-    drawHalfCircle(200, 200, 100, "brown");
-    drawRect(180, 50, 30, 220, "brown");
-    drawRect(200, 50, 100, 70, "black");
+    drawHalfCircle(boats.center.x + 20, boats.center.y + 150, boats.radius, boats.color);
+    drawRect(boats.center.x, boats.center.y, boats.width, boats.height, boats.color);
+    drawRect(boats.center.x + 20, boats.center.y, boats.width + 70, boats.height - 150, boats.flag);
 
-    drawHalfCircle(800, 200, 100, "brown");
-    drawRect(780, 50, 30, 220, "brown");
-    drawRect(800, 50, 100, 70, "black");
+    drawHalfCircle(boats.center.x + 620, boats.center.y + 150, boats.radius, boats.color);
+    drawRect(boats.center.x + 600, boats.center.y, boats.width, boats.height, boats.color);
+    drawRect(boats.center.x + 620, boats.center.y, boats.width + 70, boats.height - 150, boats.flag);
 }
 
 function mainLoop(){
     drawBackground("#24527a");
-    drawRect(0, 0, 1200, 300, "white");
+    drawRect(sky.center.x, sky.center.y, sky.width, sky.height, sky.color);
     drawBoats();
     how2Play();
+
 
     if (textIsScrolling === true){
 		startBackground.center.y = startBackground.center.y + speed;
         startButton.center.y = startButton.center.y + speed;
+        sky.center.y = sky.center.y + speed;
+        boats.center.y = boats.center.y + speed;
 	}
 
 	requestAnimationFrame(mainLoop);
