@@ -1,0 +1,220 @@
+body {
+  background-color: #1d2437;
+  color: Cornsilk;
+  font-family: "Futura", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.m-body{
+}
+
+.m-head{
+  position: sticky;
+  top: 0;
+}
+
+.m-footer{
+  gap: 5vw;
+  padding: 2vh;
+  font-size: 20px;
+  background-color: #2e3751;
+  border-top: 4px solid #495882;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.m-footer-imgs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.m-main{
+
+}
+
+.m-content{
+  overflow-y: scroll;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  padding: 1vw;
+  font-size: 20px;
+  background-color: #2e3751;
+  border-bottom: 4px solid #495882;
+  align-items: center;
+}
+
+nav .nav-first {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.section{
+  min-height: 500px;
+  padding: 20vh 16vw;
+  padding-top: 10vh;
+  box-sizing: border-box;
+}
+
+.two-columns{
+  display: flex;
+  gap: 10vh;
+}
+
+.potrait{
+  object-position: 70% 20%;
+}
+
+.card{
+	background-color: #616b86;
+  color: #1d2437;
+  font-size: 15px;
+	border-radius: 10px;	
+  overflow: hidden;
+  margin: 3vh;
+	width: 5vh;
+	height: 5vh;
+	background-clip: content-box;
+  border: 1px solid #616b86;
+}
+
+.card .body {
+  padding-left: 1rem;
+}
+
+.card .h2{
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card .info{
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+}
+
+.card img{
+  width: 5vh;
+  height: 5vh;
+  display: block;
+}
+
+
+
+.img-certs{
+  width: 70%;
+  height: 70%;
+}
+
+.img-arrows{
+  width: 9vh;
+  height: 9vh;
+}
+
+.img-grid{
+	display: grid;
+  gap: 5vh;
+  align-items: center;
+	grid:
+	'back pics next' 100%
+	/1fr 50% 1fr;
+}
+
+.back-arrow{
+  grid-area: back;
+}
+
+.pics {
+  grid-area: pics;
+}
+
+.next-arrow{
+  grid-area: next;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.experience-title{
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.time{
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #dad7cb;
+}
+
+
+.button, .wide-button {
+    padding: 15px 40px;
+    background-color:  #1d2437;
+    color: Cornsilk;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 12px;
+    transition-duration: 0.2s;
+    border: 4px solid Cornsilk;
+    color: Cornsilk;
+}
+
+.button:hover {
+    color: #f9e286;
+    background-color: #243666;
+}
+
+hr {
+  border: 2px solid Cornsilk;
+  width: 90%;
+}
+
+a{
+  color: Cornsilk;
+}
+
+footer {
+  display:none;
+  bottom: 0;
+}
+
+h2{
+  margin-left: 100px;
+  margin-top: 50px;
+
+}
+
+.club-grid{
+	display: grid;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  gap: 10vh;
+	grid:
+	'nova arltech' 1fr
+	'robotics blank' 1fr
+	/1fr 1fr;
+}
+
+.nova{
+  grid-area: nova;
+}
+
+.robotics{
+  grid-area: robotics;
+}
+
+.arltech{
+  grid-area: arltech;
+}

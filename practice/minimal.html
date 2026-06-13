@@ -4,11 +4,49 @@
 
 <head>
 	<title>Help</title>
+	<style>
+		.image-container{
+			position: relative;
+		}
+
+		#ontopImage{
+			position: absolute;
+			left: 100px;
+			bottom: 100px;
+			width: 200px;
+			height: 200px;
+		}
+
+		#ontopImageTwo{
+			position: absolute;
+			left: 800px;
+			bottom: 100px;
+			width: 200px;
+			height: 200px;
+		}
+
+		.imagesize{
+			height: 900px;
+		}
+
+		#text{
+			position: absolute;
+			left: 450px;
+			bottom: 250px;
+			font-size: 40px;
+			color: white;
+		}
+	</style>
 
 
 </head>
 <body>
-	<p>Help, this is my first web page </page>
+	<div class="image-container">
+		<img src="../../pfp.png" alt="ah" class="imagesize">
+		<img src="../../cat.png" alt="ah" id="ontopImage">
+		<img src="../../cat.png" alt="ah" id="ontopImageTwo">
+		<div id="text">This is text :DDDD</div>
+	</div>
 
 </body>
 </html>
