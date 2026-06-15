@@ -212,6 +212,11 @@ h2{
   grid-area: arltech;
 }
 
+.carousel-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .carousel-item {
   display: none;
