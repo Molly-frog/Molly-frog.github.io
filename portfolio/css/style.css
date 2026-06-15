@@ -57,11 +57,17 @@ nav .nav-first {
 }
 
 .section{
-  min-height: 500px;
-  padding: 20vh 16vw;
+  padding: 10vh 16vw;
   padding-top: 10vh;
   box-sizing: border-box;
 }
+
+.section-abt{
+  padding: 10vh;
+  padding-top: 10vh;
+  box-sizing: border-box;}
+
+
 
 .two-columns{
   display: flex;
@@ -193,7 +199,8 @@ h2{
 	display: grid;
   margin-left: 20vh;
   margin-right: 20vh;
-  gap: 10vh;
+  gap: 5vh;
+  padding-bottom: 10vh;
 	grid:
 	'nova arltech' 1fr
 	'robotics blank' 1fr
@@ -215,7 +222,7 @@ h2{
 .carousel-container{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  gap: 5vh;
 }
 
 .carousel-item {
