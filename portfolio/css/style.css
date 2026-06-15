@@ -72,70 +72,64 @@ nav .nav-first {
   object-position: 70% 20%;
 }
 
+.blog-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr));
+}
+
 .card{
-	background-color: #616b86;
-  color: #1d2437;
-  font-size: 15px;
-	border-radius: 10px;	
+  background-color: #243666;
+  margin: 4vh;
+  border-radius: 10px;
   overflow: hidden;
-  margin: 3vh;
-	width: 5vh;
-	height: 5vh;
-	background-clip: content-box;
-  border: 1px solid #616b86;
+  border: 3px solid #f9e286;
+  width: 50vh;
+	height: 57vh;
+  color: cornsilk;
+
 }
 
-.card .body {
-  padding-left: 1rem;
+.card-body {
+  padding: 1rem;
 }
 
-.card .h2{
+.card h2{
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
 }
 
-.card .info{
+.card .meta{
   font-size: 0.85rem;
   margin: 0.2rem 0;
 }
 
 .card img{
-  width: 5vh;
-  height: 5vh;
+  width: 40vh;
+  height: 30vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 5vh;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
 }
 
+.card .btn{
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.4rem 1.1rem;
+  background: #f9e286;
+  color: #243666;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
 
 .img-certs{
   width: 70%;
   height: 70%;
-}
-
-.img-arrows{
-  width: 9vh;
-  height: 9vh;
-}
-
-.img-grid{
-	display: grid;
-  gap: 5vh;
-  align-items: center;
-	grid:
-	'back pics next' 100%
-	/1fr 50% 1fr;
-}
-
-.back-arrow{
-  grid-area: back;
-}
-
-.pics {
-  grid-area: pics;
-}
-
-.next-arrow{
-  grid-area: next;
 }
 
 img{
@@ -193,7 +187,6 @@ footer {
 h2{
   margin-left: 100px;
   margin-top: 50px;
-
 }
 
 .club-grid{
@@ -217,4 +210,28 @@ h2{
 
 .arltech{
   grid-area: arltech;
+}
+
+
+.carousel-item {
+  display: none;
+  width: 25vh;
+  height: 25vh; 
+  border-radius: 15px;
+  object-fit: cover;
+}
+.carousel-item.active {
+  display: block;
+}
+
+.arrows{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.img-arrows{
+  width: 9vh;
+  height: 9vh;
 }
