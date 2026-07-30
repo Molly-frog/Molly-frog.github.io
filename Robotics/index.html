@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <!--                                 NAVBAR                                                -->
+
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -32,7 +34,7 @@
                             About Us
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="aboutus/people.html">About Us</a></li>
+                            <li><a class="dropdown-item current" href="aboutus/people.html">About Us</a></li>
                             <li><a class="dropdown-item" href="aboutus/people.html">Meet The Fish!</a></li>
                         </ul>
                     </li>
@@ -58,7 +60,6 @@
                             <li><a class="dropdown-item" href="fundrasing/mentorus.html">Mentor Us</a></li>
                         </ul>
                     </li>
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contactus/contactus.html">Contact Us</a>
@@ -68,8 +69,35 @@
         </div>
     </nav>
 
+    <!--
+    <div class="w-100" style="
+            background: url('Images/teamphotohome.png') no-repeat center; 
+            background-size: contain;
+            background-position: center;">
+        <div class="text-white" style="height: 720px; background-color: rgba(0, 0, 0, 0.6); ">
+            <h1 class="fw-bold">#8230 KoiBots</h1>
+            <h4 class="lead">Located in Arlington Virginia at the Arlington Career Center.</h4>
+        </div>
+    </div>
 
+    <div>Hello</div>
+-->
 
+    <div class="position-relative" style="width: 100vw">
+        <img class="position-abolute" src="Images/teamphotohome.png" alt="" style="width: 100vw;">
+
+        <!-- mask overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6);">
+        </div>
+
+        <!-- text over image + mask -->
+        <div class="position-absolute top-50 start-50 translate-middle text-white">
+            <h1 class="fw-bold">#8230 KoiBots</h1>
+            <h4 class="lead">Located in Arlington Virginia at the Arlington Career Center.</h4>
+        </div>
+    </div>
+
+    <img src="waves" style="margin-top: -50px">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -77,3 +105,31 @@
 </body>
 
 </html>
+
+<!--  
+    <div class="d-flex" style="background-image: url('Images/teamPhotoHome.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 400px;">
+        <div class="text-white" style="background-color: rgba(0, 0, 0, 0.6);">
+            <h1 class="mb-3 display-4 fw-bold">#8230 KoiBots</h1>
+            <h4 class="mb-3 lead">Located in Arlington Virginia at the Arlington Career Center.</h4>
+            <img src="Images/lightWave.png" alt="wave" class="img-fluid" style="margin-top: 100px;">
+        </div>
+    </div>
+                          HERO                                              
+    <div>
+
+        <!-- Overlay to darken background image for text readability 
+        <div class="mask d-flex justify-content-center align-items-center h-100"
+            style="background-color: rgba(0, 0, 0, 0.6);">
+
+            <!-- Text Content 
+            <div class="container text-white">
+                <h1 class="mb-3 display-4 fw-bold">#8230 KoiBots</h1>
+                <h4 class="mb-3 lead">Located in Arlington Virginia at the Arlington Career Center.</h4>
+                <img src="Images/lightWave.png" alt="wave" class="img-fluid">
+            </div>
+        </div>
+    </div>
+     -->
