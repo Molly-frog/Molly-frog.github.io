@@ -1,0 +1,26 @@
+/* Sets equal resting width for panels and gives them a pointer cursor */
+#abt-accordion .accordion-panel {
+  flex: 1;
+  cursor: pointer;
+  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hides text content and pushes it down slightly for the fade-in effect */
+#abt-accordion .panel-content {
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Expands the hovered item inside the container */
+#abt-accordion .image-accordion-container .accordion-panel:hover {
+  flex: 4;
+}
+
+/* Fades and slides up text inside the active hovered item */
+#abt-accordion .accordion-panel:hover .panel-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
