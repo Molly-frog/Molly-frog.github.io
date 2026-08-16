@@ -24,3 +24,14 @@
   transform: translateY(0);
   transition-delay: 0.15s;
 }
+
+/*body{
+		background-image: linear-gradient(to bottom, #9059BB, #22519F);
+	}
+	*/
+
+hr {
+  border: 2px solid black;
+  margin: auto;
+  width: 80%;
+}
