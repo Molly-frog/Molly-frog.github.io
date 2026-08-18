@@ -1,0 +1,72 @@
+    <div class="container my-5">
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <img class="pointer" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2020robotpic.png" alt="The Robot for 2020" style="height: 250px;">
+                <div><button type="button" class="btn btn-outline-info m-2" data-bs-toggle="modal" data-bs-target="#sailfishcard">Info</button></div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <img class="pointer" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2022robotpic.JPG" alt="The Robot for 2022" style="height: 250px;">
+                <div><button type="button" class="btn btn-outline-info m-2" data-bs-toggle="modal" data-bs-target="#sailfishcard">Info</button></div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <img class="pointer" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2023robotpic.jpg" alt="The Robot for 2023" style="height: 250px;">
+                <div><button type="button" class="btn btn-outline-info m-2" data-bs-toggle="modal" data-bs-target="#sailfishcard">Info</button></div>
+            </div>
+        </div>
+
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <div><img class="pointer z-0" data-bs-toggle="modal" data-bs-target="#anglerfish" src="../Images/2024robotpic.png" alt="The Robot for 2024" style="height: 250px;"></div>
+                <img class="z-n1" src="../Images/seaweed.png" alt="Seaweed">
+                <div><button type="button" class="btn btn-outline-info m-2 z-0" data-bs-toggle="modal" data-bs-target="#anglerfish">Info</button></div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <img class="pointer" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2025robotpic.jpg" alt="The Robot for 2025" style="height: 250px;">
+                <div><button type="button" class="btn btn-outline-info m-2" data-bs-toggle="modal" data-bs-target="#sailfishcard">Info</button></div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
+                <img class="pointer" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2026robotpic.jpg" alt="The Robot for 2026" style="height: 250px;">
+                <div><button type="button" class="btn btn-outline-info m-2" data-bs-toggle="modal" data-bs-target="#sailfishcard">Info</button></div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container position-relative z-0 ">
+        <!-- Row for Sponsors Section -->
+        <div class="row align-items-center mt-5">
+
+            <!-- Left Column: Treasure Chest Logos -->
+            <div class="col-md-5 d-flex flex-column gap-4">
+                <div class="p-3 border bg-light">
+                    <img src="logo1.png" alt="Sponsor Logo 1" class="img-fluid">
+                </div>
+                <div class="p-3 border bg-light">
+                    <img src="logo2.png" alt="Sponsor Logo 2" class="img-fluid">
+                </div>
+                <div class="p-3 border bg-light">
+                    <img src="logo3.png" alt="Sponsor Logo 3" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Middle Space / Fishing Rod Line element can go here -->
+            <div class="col-md-2 text-center">
+                <!-- Optional: Fishing line graphic overlay -->
+            </div>
+
+            <!-- Right Column: Fish Text Boxes -->
+            <div class="col-md-5 d-flex flex-column gap-4">
+                <div class="p-3 border rounded-pill bg-white shadow-sm">
+                    <p class="mb-0">Text here about sponsor 1</p>
+                </div>
+                <div class="p-3 border rounded-pill bg-white shadow-sm">
+                    <p class="mb-0">Text here about sponsor 2</p>
+                </div>
+                <div class="p-3 border rounded-pill bg-white shadow-sm">
+                    <p class="mb-0">Text here about sponsor 3</p>
+                </div>
+            </div>
+
+        </div>
+    </div>

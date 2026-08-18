@@ -35,3 +35,11 @@ hr {
   margin: auto;
   width: 80%;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.info-button{
+    margin-top: 260px;
+}
