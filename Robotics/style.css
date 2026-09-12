@@ -1,11 +1,9 @@
-/* Sets equal resting width for panels and gives them a pointer cursor */
 #abt-accordion .accordion-panel {
   flex: 1;
   cursor: pointer;
   transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Hides text content and pushes it down slightly for the fade-in effect */
 #abt-accordion .panel-content {
   background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   opacity: 0;
@@ -13,12 +11,10 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Expands the hovered item inside the container */
 #abt-accordion .image-accordion-container .accordion-panel:hover {
   flex: 4;
 }
 
-/* Fades and slides up text inside the active hovered item */
 #abt-accordion .accordion-panel:hover .panel-content {
   opacity: 1;
   transform: translateY(0);
@@ -31,11 +27,13 @@
 	*/
 
 hr {
-  border: 2px solid black;
+  border: 2px solid #22519F;
   margin: auto;
   width: 80%;
+  opacity: 1;
 }
 
+/*      PAST SEASONS        */
 .pointer {
     cursor: pointer;
 }
@@ -55,4 +53,75 @@ body{
 
 h1{
 
+}
+
+/*           BUTTONS            */
+.btn-custom {
+  background-color: #FF9645;
+  color: #ffffff;
+}
+
+.btn-custom:hover {
+  background-color: #9059BB;
+  color: white;
+}
+
+/*           NAVBAR            */
+.nav-custom{
+    background-color: #9059BB !important;
+}
+
+.nav-custom .navbar-brand {
+    color: white;
+}
+
+.nav-custom .navbar-nav .nav-link {
+    color: white;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #38B6FF;
+}
+
+
+/*           FOOTER            */
+.footer-custom{
+    background-color: #9059BB;
+    color: white;
+}
+
+.footer-custom a{
+    color: white;
+}
+
+/*           MISSON/VISION CARDS            */
+.mision-card{
+    background-color: #FF9645 !important;
+    color: white;
+}
+
+.vision-card{
+    background-color: #9059BB !important;
+    color: white;
+}
+
+/*           QEUSTIONS            */
+.qustions-card{
+    background-color: #38B6FF !important;
+    color: white !important;
+    border-color: #22519F;
+    --bs-card-border-color: #22519F;
+}
+
+.vr{
+    background-color: #22519F;
+    width: 3px;
+    opacity: 1;
+}
+
+/*          CAROUSEL               */
+.carousel-inner img {
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
 }

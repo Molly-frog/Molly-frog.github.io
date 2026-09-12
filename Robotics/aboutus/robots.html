@@ -13,15 +13,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #003459;
+        }
+    </style>
 </head>
 
 <body>
     <!--                                 NAVBAR                                                -->
-
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary nav-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../Images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="../index.html" style="font-size: 30px;">
+                <img src="../Images/logo.png" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
                 KoiBots
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -72,20 +76,18 @@
         </div>
     </nav>
 
-    <!-- TITLE -->
-    <div class="container text-center my-5">
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <img src="../Images/greyfishleft.png" alt="Grey Fish Left">
-            <h1 class="m-0">Past Seasons</h1>
-            <img src="../Images/greyfishright.png" alt="Grey Fish Right">
+    <!--            HERO                     -->
+    <div class="position-relative text-white text-center">
+        <img class="img-fluid w-100" src="../Images/pastseasons.png" alt="Past Seasons Photo">
+        <div class="position-absolute top-50 start-50 translate-middle w-100 px-3" style="margin-top: -60px;">
+            <h1 class="fw-bold display-2">Past Seasons</h1>
         </div>
     </div>
-
-    <div><img class="img-fluid" src="../Images/mwave.png" alt="Dark colored wave"></div>
 
     <!-- ROBOTS -->
 
     <div class="container my-5">
+        <h2 class="mb-5 text-center text-white">Click on a robot to learn more!</h2>
         <div class="row text-center justify-content-center mb-5">
             <div class="col-md-4 position-relative mb-4" style="min-height: 300px;">
                 <img class="pointer position-absolute top-0 start-50 translate-middle-x" data-bs-toggle="modal" data-bs-target="#sailfishcard" src="../Images/2020robotpic.png" alt="The Robot for 2020" style="height: 250px;">
@@ -161,12 +163,12 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-primary text-lg-start text-white">
+    <footer class="footer-custom text-lg-start">
         <div class="container p-4">
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0 d-flex my-4">
                     <img src="../Images/logo.png" height="125" alt="Logo"
-                        loading="lazy"/>
+                        loading="lazy">
                     <div>
                         <h5 class="fw-bold" style="margin-left: 15px; margin-top: 5px;">Arlington Career Center</h5>
                         <p style="margin-left: 15px; margin-top: 5px;">816 S. Walter Reed Drive, <br> Arlington, VA 22204</p>
@@ -175,9 +177,9 @@
 
                 <div class="col-md-6 text-md-end my-4">
                     <div class="fw-bold"><h5>Contact Us</h5></div>
-                    <div><a class="text-white" href="mailto:acckoibots8230@gmail.com" target="_blank" draggable="false" rel="noopener nofollow" style="text-decoration: none;">acckoibots8230@gmail.com</a></div>
-                    <div><a class="text-white" href="https://instagram.com/koibots/" target="_blank" style="text-decoration: none;">Instagram</a></div>
-                    <div><a class="text-white" href="https://youtube.com/@KoiBots8230" target="_blank" style="text-decoration: none;">Youtube</a></div
+                    <div><a href="mailto:acckoibots8230@gmail.com" target="_blank" draggable="false" rel="noopener nofollow" style="text-decoration: none;">acckoibots8230@gmail.com</a></div>
+                    <div><a href="https://instagram.com/koibots/" target="_blank" style="text-decoration: none;">Instagram</a></div>
+                    <div><a href="https://youtube.com/@KoiBots8230" target="_blank" style="text-decoration: none;">Youtube</a></div>
                 </div>
             </div>
         </div>

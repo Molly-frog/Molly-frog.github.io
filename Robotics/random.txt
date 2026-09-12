@@ -70,3 +70,53 @@
 
         </div>
     </div>
+
+
+<div id="questions" class="card">
+    <div class="card-header">
+        <nav aria-label="...">
+            <ul class="pagination pagination-lg ">
+                <li class="page-item"><a class="page-link" data-bs-toggle="collapse" href="#are" aria-expanded="true" aria-controls="are">Who We Are</a></li>
+                <li class="page-item"><a class="page-link" data-bs-toggle="collapse" href="#do" aria-expanded="true" aria-controls="do">What We Do</a></li>
+                <li class="page-item"><a class="page-link" data-bs-toggle="collapse" href="#work" aria-expanded="true" aria-controls="work">How We Work</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="card-body">
+        <div id="are" class="collapse show" data-bs-parent="#questions">
+            <h5 class="card-title">Who We Are</h5>
+            <p class="card-text" style="margin-bottom: 10px;">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
+
+        <div id="do" class="collapse" data-bs-parent="#questions">
+            <h5 class="card-title">What We Do</h5>
+            <p class="card-text" style="margin-bottom: 10px;">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
+
+        <div id="work" class="collapse" data-bs-parent="#questions">
+            <h5 class="card-title">How We Work</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+        <div class="row">
+            <div class="col text-center mb-3">
+                <h2>Meet The Fish!</h2>
+            </div>
+
+            <div class="col-sm-3">
+                <img src="../Images/intertubefish.png">
+                <a href="aboutus/abtus.html" class="btn btn-custom"><h5>Learn More</h5></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <h5>Small text about how we are student led.</h5>
+            </div>
+        </div>
+</div>
