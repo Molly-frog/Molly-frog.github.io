@@ -51,8 +51,13 @@ body{
     color: #01013f;
 }
 
-h1{
+@font-face {
+    font-family: 'smooth-circulars';
+    src: url('fonts/smoothCirculars.otf');
+}
 
+h1, h2{
+    font-family: 'smooth-circulars', sans-serif;
 }
 
 /*           BUTTONS            */
@@ -73,6 +78,7 @@ h1{
 
 .nav-custom .navbar-brand {
     color: white;
+    font-family: 'smooth-circulars', sans-serif;
 }
 
 .nav-custom .navbar-nav .nav-link {
