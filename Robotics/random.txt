@@ -120,3 +120,90 @@
             </div>
         </div>
 </div>
+
+
+
+
+
+
+
+<div class="container my-5">
+        <div class="row text-center justify-content-center mb-5">
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+                <img class="z-1 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+                <img src="../Images/koifishright.png" alt="Koifish going right" style="margin-left: -10rem;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+                <img src="../Images/koifishleft.png" alt="Koifish going left" style="margin-left: 2rem; margin-top: -7rem;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+                <img class="z-1 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
+
+
+                <img class="z-0 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
+
+
+                <img class="" src="../Images/koifishwave.png" alt="Koifish Wave" style="margin-left: -35rem;">
+                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

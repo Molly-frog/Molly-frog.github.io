@@ -30,7 +30,7 @@ hr {
   border: 2px solid #22519F;
   margin: auto;
   width: 80%;
-  opacity: 1;
+  opacity: 70%;
 }
 
 /*      PAST SEASONS        */
@@ -43,7 +43,7 @@ hr {
 }
 
 body{
-    background-color: lightblue;
+    background-color: white;
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -92,7 +92,7 @@ h1, h2{
 
 /*           FOOTER            */
 .footer-custom{
-    background-color: #9059BB;
+    background-color: #22519F;
     color: white;
 }
 

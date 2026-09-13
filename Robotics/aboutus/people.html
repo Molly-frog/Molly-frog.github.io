@@ -15,13 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #38B6FF;
+            background-color: #c9edff;
+        }
+
+        .text-body-secondary{
+            color: rgba(1, 1, 63, 0.75) !important;
+        }
+
+        .card-title{
+            color: #01013f;
         }
     </style>
 </head>
 
 <body>
-
     <!--                                 NAVBAR                                                -->
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary nav-custom">
         <div class="container-fluid">
@@ -34,7 +41,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse d-flex justify-content-end " id="navbarNavDropdown">
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end " id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="abtus.html" role="button" data-bs-toggle="dropdown"
@@ -78,173 +85,217 @@
     </nav>
 
 
-<!-- LEADERS CARDS -->
-    <div class="container text-center my-5">
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <img src="../Images/greyfishleft.png" alt="Grey Fish Left">
-            <h1 class="m-0">Leadership</h1>
-            <img src="../Images/greyfishright.png" alt="Grey Fish Right">
+<!-- TITLE  -->
+    <div class="position-relative text-white text-center">
+        <img class="img-fluid w-100" src="../Images/leadership.png" alt="Team Photo">
+
+        <!-- text over image -->
+        <div class="position-absolute top-50 start-50 translate-middle w-100 px-3" style="margin-top: -60px;">
+            <h1 class="fw-bold display-4">Leadership</h1>
         </div>
     </div>
 
+<!-- LEADERS CARDS -->
     <div class="container my-5">
         <div class="row text-center justify-content-center mb-5">
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="z-1 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <img src="../Images/koifishright.png" alt="Koifish going right" style="margin-left: -10rem;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+            <!-- Card 1 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <img class="d-md-block position-absolute w-100" src="../Images/koifishright.png" alt="Koifish going right"  style="top: 50%; right: 130px;">
+                <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <img src="../Images/koifishleft.png" alt="Koifish going left" style="margin-left: 5rem; margin-top: -10rem;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid z-1" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4 z-2" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <img class="d-md-block position-absolute w-100 z-0" src="../Images/koifishleft.png" alt="Koifish going right"  style="top: -30%; right: -70px;">
+                <div class="card shadow-sm position-absolute mt-5 z-2" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
 
-        <div class="row text-center justify-content-center">
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+        <div class="row text-center justify-content-center mb-5">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="z-1 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <img class="d-md-block position-absolute z-n1" src="../Images/koifishwave.png" alt="Koifish going right"  style="top: 30%; right: -120px;">
+                <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="z-0 position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <img class="" src="../Images/koifishwave.png" alt="Koifish Wave" style="margin-left: -35rem;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
-                    </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center position-relative">
+                <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                <div class="card shadow-sm position-absolute mt-5 z-2" style="top: 210px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Name</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
+                    <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
 
     <hr>
 
-    <!-- MENTOR CARDS -->
+    <!-- MENTOR -->
     <div class="container text-center my-5">
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <img src="../Images/greyfishleft.png" alt="Grey Fish Left">
-            <h1 class="m-0">Mentors</h1>
-            <img src="../Images/greyfishright.png" alt="Grey Fish Right">
-        </div>
+        <h1>Mentors</h1>
     </div>
 
+<!-- CARDS -->
     <div class="container my-5">
         <div class="row text-center justify-content-center mb-5">
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <img src="../Images/koifishlargegroup.png" alt="Koifish in a large" style="margin-left: -12rem;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <img class="d-md-block position-absolute" src="../Images/koifishlargegroup.png" alt="Koifish going right"  style="top: 80%; right: -500px;">
+                    <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid z-1" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4 z-2" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <img class="d-md-block position-absolute w-100 z-0" src="../Images/koifishleft.png" alt="Koifish going right"  style="top: -20%; right: -70px;">
+                    <div class="card shadow-sm position-absolute mt-5 z-2" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row text-center justify-content-center">
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+        <div class="row text-center justify-content-center mb-5">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="" src="../Images/koifishright.png" alt="Koifish going right" style="margin-left: -10rem;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <img class="d-md-block position-absolute z-n1" src="../Images/koifishwave.png" alt="Koifish going right"  style="top: 30%; right: -120px;">
+                    <div class="card shadow-sm position-absolute mt-5" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 position-relative mb-4" style="min-height: 400px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x" src="../Images/board.png" alt="Wooden Frame Background" style="width: 250px;">
-                <img class="position-absolute top-0 start-50 translate-middle-x p-4" src="../Images/michael.png" alt="RIP MICHAEL" style="margin-left: 2px;">
-                <div class="card position-absolute top-0 start-50 translate-middle-x p-3 rounded-3" style="width: 12rem; margin-top: 250px; margin-left: 2px;">
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="d-flex flex-column align-items-center position-relative">
+                    <img class="img-fluid" src="../Images/board.png" alt="Wooden Frame Background" style="max-width: 250px;">
+                    <img class="position-absolute top-0 start-50 translate-middle-x mt-4" src="../Images/michael.png" alt="Michael" style="height: auto;">
+                    <div class="card shadow-sm position-absolute mt-5 z-2" style="top: 210px;">
                     <div class="card-body">
-                        <h5 class="card-title">Name</h5>
+                        <h5 class="card-title mb-2">Name</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Title/Profession</h6>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Past Mentor</h6>
+                        <h6 class="card-subtitle text-body-secondary">Past Mentor</h6>
+                    </div>
                     </div>
                 </div>
             </div>
