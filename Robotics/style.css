@@ -71,6 +71,17 @@ h1, h2{
   color: white;
 }
 
+.btn-outline-info{
+    --bs-btn-disabled-border-color: #38B6FF;
+    --bs-btn-color: #38B6FF;
+    --bs-btn-border-color: #38B6FF;
+    --bs-btn-hover-bg: #38B6FF;
+    --bs-btn-hover-border-color: #38B6FF;
+    --bs-btn-active-bg: #38B6FF;
+    --bs-btn-active-border-color: #38B6FF;
+    --bs-btn-disabled-color: #38B6FF;
+}
+
 /*           NAVBAR            */
 .nav-custom{
     background-color: #9059BB !important;
