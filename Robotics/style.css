@@ -38,9 +38,6 @@ hr {
     cursor: pointer;
 }
 
-.info-button{
-    margin-top: 260px;
-}
 
 body{
     background-color: white;
@@ -61,6 +58,10 @@ h1, h2{
 }
 
 /*           BUTTONS            */
+.info-button{
+    margin-top: 260px;
+}
+
 .btn-custom {
   background-color: #FF9645;
   color: #ffffff;
@@ -141,4 +142,18 @@ h1, h2{
     height: 350px;
     object-fit: cover;
     object-position: center;
+}
+
+.crab-card{
+    background-color: transparent;
+    border: 0;
+    color: #01013f;
+}
+
+.text-body-secondary{
+    color: rgba(1, 1, 63, 0.75) !important;
+}
+
+.crab-card .card-title{
+    color: #01013f;
 }
